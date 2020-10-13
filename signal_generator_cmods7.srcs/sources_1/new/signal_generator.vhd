@@ -32,7 +32,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity signal_generator is
---  Port ( );
+    Port (clk_12mhz : in std_logic;
+          dac_ch1 : out std_logic_vector(11 downto 0);
+          dac_wrt1 : out std_logic;
+          dac_clk : out std_logic);
 end signal_generator;
 
 architecture Behavioral of signal_generator is
