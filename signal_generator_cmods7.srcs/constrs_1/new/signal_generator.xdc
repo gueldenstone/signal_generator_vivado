@@ -15,7 +15,6 @@ create_clock -add -name sys_clk_pin -period 83.33 -waveform {0 41.66} [get_ports
 set_property -dict { PACKAGE_PIN L1    IOSTANDARD LVCMOS33 } [get_ports { o_clk_1mhz }]; #IO_L18N_T2_34 Sch=pio[01]
 
 # dac data
-set_property -dict { PACKAGE_PIN C5    IOSTANDARD LVCMOS33 } [get_ports { o_dac1_data[8] }]; #IO_L5P_T0_34 Sch=pio[40]
 set_property -dict { PACKAGE_PIN A2    IOSTANDARD LVCMOS33 } [get_ports { o_dac1_data[7] }]; #IO_L2N_T0_34 Sch=pio[41]
 set_property -dict { PACKAGE_PIN B2    IOSTANDARD LVCMOS33 } [get_ports { o_dac1_data[6] }]; #IO_L2P_T0_34 Sch=pio[42]
 set_property -dict { PACKAGE_PIN B1    IOSTANDARD LVCMOS33 } [get_ports { o_dac1_data[5] }]; #IO_L4N_T0_34 Sch=pio[43]

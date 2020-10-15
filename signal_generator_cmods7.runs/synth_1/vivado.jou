@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Thu Oct 15 12:53:33 2020
-# Process ID: 15796
+# Start of session at: Thu Oct 15 13:45:23 2020
+# Process ID: 21458
 # Current directory: /vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.runs/synth_1
 # Command line: vivado -log signal_generator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source signal_generator.tcl
 # Log file: /vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.runs/synth_1/signal_generator.vds
