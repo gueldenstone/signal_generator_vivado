@@ -39,7 +39,7 @@ end signal_generator;
 
 architecture Behavioral of signal_generator is
   signal clk_1mhz : std_logic;
-  signal lut_address : std_logic_vector(7 downto 0);
+  signal lut_address : std_logic_vector(1 downto 0);
   -- signal write_lut : std_logic;
   -- signal lut_data_in : std_logic_vector(7 downto 0);
 
@@ -71,7 +71,7 @@ architecture Behavioral of signal_generator is
         address : in std_logic_vector(1 downto 0);
         -- we : in std_logic;
         -- data_in : in std_logic_vector(11 downto 0);
-        data_out : out std_logic_vector(1 downto 0)
+        data_out : out std_logic_vector(7 downto 0)
     );
 end component;
 
@@ -87,7 +87,7 @@ begin
   lut_counter : bincntr
   generic map
   (
-    N => 8 -- 128 samples
+    N => 2
   )
   port map
   (
@@ -103,7 +103,7 @@ begin
     address => lut_address,
     -- we => write_lut,
     -- data_in => lut_data_in,
-    data_out => o_dac1_data(1 downto 0)
+    data_out => o_dac1_data
   );
 
 end Behavioral;

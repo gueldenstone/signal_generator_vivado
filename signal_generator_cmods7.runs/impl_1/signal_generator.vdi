@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Oct 15 12:55:24 2020
+# Process ID: 16025
+# Current directory: /vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.runs/impl_1
+# Command line: vivado -log signal_generator.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source signal_generator.tcl -notrace
+# Log file: /vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.runs/impl_1/signal_generator.vdi
+# Journal file: /vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source signal_generator.tcl -notrace
+Command: link_design -top signal_generator -part xc7s25csga225-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7s25csga225-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1635.754 ; gain = 0.000 ; free physical = 695 ; free virtual = 1124
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.srcs/constrs_1/new/signal_generator.xdc]
+WARNING: [Vivado 12-584] No ports matched 'o_dac1_data[8]'. [/vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.srcs/constrs_1/new/signal_generator.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.srcs/constrs_1/new/signal_generator.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.srcs/constrs_1/new/signal_generator.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1734.258 ; gain = 0.000 ; free physical = 615 ; free virtual = 1045
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 1738.227 ; gain = 305.691 ; free physical = 615 ; free virtual = 1044
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1774.047 ; gain = 35.820 ; free physical = 609 ; free virtual = 1039
+
+Starting Cache Timing Information Task

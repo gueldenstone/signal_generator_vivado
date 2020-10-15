@@ -46,8 +46,8 @@ end lut;
 architecture Behavioral of lut is
     type lut_type is array (0 to (2**address'length)-1) of std_logic_vector(data_out'range);
     constant lut_data : lut_type := (
-        "11111111",
-        "11111111",
+        "10101010",
+        "00000000",
         "00000000",
         "00000000"
     );
