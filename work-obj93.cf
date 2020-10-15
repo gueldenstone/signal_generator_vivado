@@ -1,0 +1,10 @@
+v 4
+file . "signal_generator_cmods7.srcs/sources_1/new/clock_divider.vhd" "63ff3b6979287188d2d96ea826fecdf7df92cb92" "20201014202912.784":
+  entity clk_divider at 2( 1) + 0 on 21;
+  architecture behavioral of clk_divider at 34( 628) + 0 on 22;
+file . "signal_generator_cmods7.srcs/sources_1/new/counter.vhd" "f775b33be6cc60d21a1d1e2d1014a029a435af82" "20201014202907.994":
+  entity bincntr at 2( 1) + 0 on 19;
+  architecture impl of bincntr at 19( 264) + 0 on 20;
+file . "signal_generator_cmods7.srcs/sources_1/new/signal_generator.vhd" "99be3bb1b7ff126db4289eb483705c9ce3ab7ecf" "20201014202556.274":
+  entity signal_generator at 22( 474) + 0 on 17;
+  architecture behavioral of signal_generator at 41( 1033) + 0 on 18;
