@@ -106,4 +106,6 @@ begin
     data_out => o_dac1_data
   );
 
+  o_clk_1mhz <= clk_1mhz;
+
 end Behavioral;

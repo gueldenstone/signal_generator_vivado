@@ -1,0 +1,58 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /vagrant/vivado/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 461615971a294f9c8ec05f3dd480d5c5 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot signal_generator_tb_func_synth xil_defaultlib.signal_generator_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture lut1_v of entity unisim.LUT1 [\LUT1(init="0001")(0,3)\]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0000000000000001")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1111111111111110")(0...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111111111111111...]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture carry4_v of entity unisim.CARRY4 [carry4_default]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111111111100000...]
+Compiling architecture structure of entity xil_defaultlib.clk_divider [clk_divider_default]
+Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
+Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(1,9)(1,1)(1,4)(1,7)\]
+Compiling architecture muxf7_v of entity unisim.MUXF7 [muxf7_default]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="1110")(0,3)\]
+Compiling architecture structure of entity xil_defaultlib.lut [lut_default]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0110")(0,3)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="01111000")(0,7)\]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0111111110000000")(0...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="01111111111111111000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01111111111111111111...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10000000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01111000111001001111...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00101010101101110000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00011001100100101010...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01010010110110110011...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01100011000111000011...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01111100000111111100...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01111111111000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10000000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000111000110110000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01010101010010001111...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01100110011011010101...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00101101001001001100...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00011100111000111100...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000011111000000011...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000111111111...]
+Compiling architecture structure of entity xil_defaultlib.bincntr [bincntr_default]
+Compiling architecture obuft_v of entity unisim.OBUFT [\OBUFT(1,9)(1,7)(1,4)\]
+Compiling architecture obuf_v of entity unisim.OBUF [\OBUF(1,9)(1,7)(1,4)\]
+Compiling architecture structure of entity xil_defaultlib.signal_generator [signal_generator_default]
+Compiling architecture behavioral of entity xil_defaultlib.signal_generator_tb
+ERROR: [XSIM 43-3409] Failed to compile generated C file xsim.dir/signal_generator_tb_func_synth/obj/xsim_1.c.
+ERROR: [XSIM 43-3915] Encountered a fatal error. Cannot continue. Exiting... 

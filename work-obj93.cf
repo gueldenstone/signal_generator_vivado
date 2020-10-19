@@ -1,10 +1,16 @@
 v 4
-file . "signal_generator_cmods7.srcs/sources_1/new/clock_divider.vhd" "63ff3b6979287188d2d96ea826fecdf7df92cb92" "20201014202912.784":
-  entity clk_divider at 2( 1) + 0 on 21;
-  architecture behavioral of clk_divider at 34( 628) + 0 on 22;
-file . "signal_generator_cmods7.srcs/sources_1/new/counter.vhd" "f775b33be6cc60d21a1d1e2d1014a029a435af82" "20201014202907.994":
-  entity bincntr at 2( 1) + 0 on 19;
-  architecture impl of bincntr at 19( 264) + 0 on 20;
-file . "signal_generator_cmods7.srcs/sources_1/new/signal_generator.vhd" "99be3bb1b7ff126db4289eb483705c9ce3ab7ecf" "20201014202556.274":
-  entity signal_generator at 22( 474) + 0 on 17;
-  architecture behavioral of signal_generator at 41( 1033) + 0 on 18;
+file . "signal_generator_cmods7.srcs/sim_1/new/signal_generator_tb.vhd" "d4c20a752f6e1cd34cc3c6b065e51666199f86db" "20201015191725.852":
+  entity signal_generator_tb at 22( 477) + 0 on 11;
+  architecture behavioral of signal_generator_tb at 37( 869) + 0 on 12;
+file . "signal_generator_cmods7.srcs/sources_1/new/clock_divider.vhd" "63ff3b6979287188d2d96ea826fecdf7df92cb92" "20201015191725.853":
+  entity clk_divider at 2( 1) + 0 on 15;
+  architecture behavioral of clk_divider at 34( 628) + 0 on 16;
+file . "signal_generator_cmods7.srcs/sources_1/new/counter.vhd" "f775b33be6cc60d21a1d1e2d1014a029a435af82" "20201015191725.853":
+  entity bincntr at 2( 1) + 0 on 17;
+  architecture impl of bincntr at 19( 264) + 0 on 18;
+file . "signal_generator_cmods7.srcs/sources_1/new/lut.vhd" "dd51cb4772510aad55bf2c674bd751f78630e65d" "20201015191725.853":
+  entity lut at 22( 461) + 0 on 19;
+  architecture behavioral of lut at 46( 1049) + 0 on 20;
+file . "signal_generator_cmods7.srcs/sources_1/new/signal_generator.vhd" "66fad65732d2cf872441794375804187ccfa4a39" "20201015191725.853":
+  entity signal_generator at 22( 474) + 0 on 13;
+  architecture behavioral of signal_generator at 40( 994) + 0 on 14;

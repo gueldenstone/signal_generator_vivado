@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
--------------------------------------------------------------------------------------------------
-| Tool Version              : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date                      : Thu Oct 15 13:48:54 2020
-| Host                      : linux running 64-bit Ubuntu 20.04.1 LTS
+---------------------------------------------------------------------------------------------------
+| Tool Version              : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date                      : Sun Oct 18 17:04:20 2020
+| Host                      : macmini-ubuntu running 64-bit Ubuntu 20.04.1 LTS
 | Command                   : report_io -file signal_generator_io_placed.rpt
 | Design                    : signal_generator
 | Device                    : xc7s25
@@ -10,7 +10,7 @@ Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 | Package                   : csga225
 | Package Version           : PRODUCTION 1.1 11/06/2017
 | Package Pin Delay Version : PRODUCTION 1.0 6/27/2017
--------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 
 IO Information
 
@@ -185,7 +185,7 @@ Table of Contents
 | K13        |                | High Range | IO_L2N_T0_D03_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | K14        |                | High Range | IO_L4P_T0_D04_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | K15        |                | High Range | IO_L5N_T0_D07_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| L1         | o_clk_1mhz     | High Range | IO_L18N_T2_34                | TRISTATE    | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| L1         | o_clk_1mhz     | High Range | IO_L18N_T2_34                | OUTPUT      | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | L2         |                |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | L3         |                | High Range | VCCO_34                      | VCCO        |             |      34 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | L4         |                | Dedicated  | TDI_0                        | Config      |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

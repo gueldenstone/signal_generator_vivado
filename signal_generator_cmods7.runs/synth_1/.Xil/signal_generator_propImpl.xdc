@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.srcs/constrs_1/new/signal_generator.xdc rfile:../../../signal_generator_cmods7.srcs/constrs_1/new/signal_generator.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/lukas/dev/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.srcs/constrs_1/new/signal_generator.xdc rfile:../../../signal_generator_cmods7.srcs/constrs_1/new/signal_generator.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN M9    IOSTANDARD LVCMOS33 } [get_ports { i_clk_12mhz }]; #IO_L13P_T2_MRCC_14 Sch=gclk
 set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]

@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Thu Oct 15 13:49:21 2020
-| Host         : linux running 64-bit Ubuntu 20.04.1 LTS
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Sun Oct 18 17:04:40 2020
+| Host         : macmini-ubuntu running 64-bit Ubuntu 20.04.1 LTS
 | Command      : report_methodology -file signal_generator_methodology_drc_routed.rpt -pb signal_generator_methodology_drc_routed.pb -rpx signal_generator_methodology_drc_routed.rpx
 | Design       : signal_generator
 | Device       : xc7s25csga225-1
@@ -23,12 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 7
-+-----------+------------------+-----------------------------+------------+
-| Rule      | Severity         | Description                 | Violations |
-+-----------+------------------+-----------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 7          |
-+-----------+------------------+-----------------------------+------------+
+             Violations found: 8
++-----------+------------------+-------------------------------+------------+
+| Rule      | Severity         | Description                   | Violations |
++-----------+------------------+-------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 7          |
+| TIMING-18 | Warning          | Missing input or output delay | 1          |
++-----------+------------------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -65,6 +66,11 @@ Related violations: <none>
 TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
 The clock pin lut_counter/cntr_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An output delay is missing on o_clk_1mhz relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 

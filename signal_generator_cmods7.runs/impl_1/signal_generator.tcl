@@ -65,17 +65,17 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
+  set_param chipscope.maxJobs 1
   create_project -in_memory -part xc7s25csga225-1
   set_property board_part digilentinc.com:cmod-s7-25:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.cache/wt [current_project]
-  set_property parent.project_path /vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.xpr [current_project]
-  set_property ip_output_repo /vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/lukas/dev/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.cache/wt [current_project]
+  set_property parent.project_path /home/lukas/dev/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.xpr [current_project]
+  set_property ip_output_repo /home/lukas/dev/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.runs/synth_1/signal_generator.dcp
-  read_xdc /vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.srcs/constrs_1/new/signal_generator.xdc
+  add_files -quiet /home/lukas/dev/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.runs/synth_1/signal_generator.dcp
+  read_xdc /home/lukas/dev/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.srcs/constrs_1/new/signal_generator.xdc
   link_design -top signal_generator -part xc7s25csga225-1
   close_msg_db -file init_design.pb
 } RESULT]
