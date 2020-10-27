@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"signal_generator_tb_func_synth.vhd" \
-"../../../../../signal_generator_cmods7.srcs/sim_1/new/signal_generator_tb.vhd" \
-
-# Do not sort compile order
-nosort

@@ -1,7 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.sim/sim_1/synth/func/xsim/signal_generator_tb_func_synth.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'bincntr'
-INFO: [VRFC 10-3107] analyzing entity 'clk_divider'
-INFO: [VRFC 10-3107] analyzing entity 'lut'
-INFO: [VRFC 10-3107] analyzing entity 'signal_generator'
-INFO: [VRFC 10-163] Analyzing VHDL file "/vagrant/vivado/projects/signal_generator_cmods7/signal_generator_cmods7.srcs/sim_1/new/signal_generator_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'signal_generator_tb'
