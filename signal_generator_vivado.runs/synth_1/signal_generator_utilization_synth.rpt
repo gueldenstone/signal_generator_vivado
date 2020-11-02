@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Tue Oct 27 18:09:04 2020
-| Host         : elitebook-lgu running 64-bit Ubuntu 20.04.1 LTS
+| Date         : Mon Nov  2 09:31:04 2020
+| Host         : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command      : report_utilization -file signal_generator_utilization_synth.rpt -pb signal_generator_utilization_synth.pb
 | Design       : signal_generator
 | Device       : 7s25csga225-1

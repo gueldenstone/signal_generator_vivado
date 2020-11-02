@@ -40,7 +40,8 @@ architecture Behavioral of signal_generator_tb is
     (
         i_clk_12mhz : in std_logic;
         o_clk_1mhz : out std_logic;
-        o_dac1_data: out std_logic_vector(11 downto 0)
+        o_dac1_data: out std_logic_vector(11 downto 0);
+        o_dac2_data: out std_logic_vector(11 downto 0)
     );
     end component;
 
@@ -48,6 +49,7 @@ architecture Behavioral of signal_generator_tb is
     signal i_clk_12mhz_sim : std_logic := '0';
     signal o_clk_1mhz_sim : std_logic := '0';
     signal o_dac1_data : std_logic_vector(11 downto 0) := (others => '0');
+    signal o_dac2_data : std_logic_vector(11 downto 0) := (others => '0');
 
 begin
     testobject : signal_generator
@@ -55,7 +57,8 @@ begin
     (
         i_clk_12mhz => i_clk_12mhz_sim,
         o_clk_1mhz => o_clk_1mhz_sim,
-        o_dac1_data => o_dac1_data
+        o_dac1_data => o_dac1_data,
+        o_dac2_data => o_dac2_data
     );
 
     process

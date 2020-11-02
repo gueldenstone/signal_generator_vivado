@@ -67,7 +67,6 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
   create_project -in_memory -part xc7s25csga225-1
-  set_property board_part_repo_paths {/home/lukas/tools/Xilinx/Vivado/2019.2/data/boards/board_files} [current_project]
   set_property board_part digilentinc.com:cmod-s7-25:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0

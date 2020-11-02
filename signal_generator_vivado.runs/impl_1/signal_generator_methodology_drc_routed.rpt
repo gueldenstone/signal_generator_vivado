@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Tue Oct 27 18:10:20 2020
-| Host         : elitebook-lgu running 64-bit Ubuntu 20.04.1 LTS
+| Date         : Mon Nov  2 17:20:08 2020
+| Host         : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command      : report_methodology -file signal_generator_methodology_drc_routed.rpt -pb signal_generator_methodology_drc_routed.pb -rpx signal_generator_methodology_drc_routed.rpx
 | Design       : signal_generator
 | Device       : xc7s25csga225-1
@@ -35,37 +35,37 @@ Table of Contents
 -----------------
 TIMING-17#1 Critical Warning
 Non-clocked sequential cell  
-The clock pin lut_counter/cntr_reg[0]/C is not reached by a timing clock
+The clock pin lut1_counter/cntr_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#2 Critical Warning
 Non-clocked sequential cell  
-The clock pin lut_counter/cntr_reg[1]/C is not reached by a timing clock
+The clock pin lut1_counter/cntr_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#3 Critical Warning
 Non-clocked sequential cell  
-The clock pin lut_counter/cntr_reg[2]/C is not reached by a timing clock
+The clock pin lut1_counter/cntr_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#4 Critical Warning
 Non-clocked sequential cell  
-The clock pin lut_counter/cntr_reg[3]/C is not reached by a timing clock
+The clock pin lut1_counter/cntr_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#5 Critical Warning
 Non-clocked sequential cell  
-The clock pin lut_counter/cntr_reg[4]/C is not reached by a timing clock
+The clock pin lut1_counter/cntr_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#6 Critical Warning
 Non-clocked sequential cell  
-The clock pin lut_counter/cntr_reg[5]/C is not reached by a timing clock
+The clock pin lut1_counter/cntr_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
-The clock pin lut_counter/cntr_reg[6]/C is not reached by a timing clock
+The clock pin lut1_counter/cntr_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-18#1 Warning

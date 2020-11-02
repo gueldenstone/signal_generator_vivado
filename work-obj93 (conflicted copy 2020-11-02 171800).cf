@@ -1,0 +1,19 @@
+v 4
+file . "signal_generator_vivado.srcs/sources_1/imports/new/signal_generator.vhd" "27ca9b1822429a1d1d4e89cf515c6cd4623962dd" "20201102161800.222":
+  entity signal_generator at 22( 474) + 0 on 22;
+  architecture behavioral of signal_generator at 40( 947) + 0 on 23;
+file . "signal_generator_vivado.srcs/sources_1/imports/new/lut.vhd" "b88c6e9106aeec2f66fa0c089609e807844728af" "20201102161800.104":
+  package lookup_table at 1( 0) + 0 on 19;
+  entity lut at 17( 348) + 0 on 20;
+  architecture behavioral of lut at 32( 645) + 0 on 21;
+file . "signal_generator_vivado.srcs/sources_1/imports/new/counter.vhd" "814e0c42a80053dfdf5f3590b41c30638979f869" "20201102161800.000":
+  package counter at 1( 0) + 0 on 13;
+  entity bincntr at 22( 399) + 0 on 14;
+  architecture impl of bincntr at 41( 757) + 0 on 15;
+file . "signal_generator_vivado.srcs/sources_1/imports/new/clock_divider.vhd" "ef6b595224a1d46d40d1832dd17a100ed6992b55" "20201102161800.061":
+  package clock_divider at 2( 1) + 0 on 16;
+  entity clk_divider at 20( 333) + 0 on 17;
+  architecture behavioral of clk_divider at 34( 586) + 0 on 18;
+file . "signal_generator_vivado.srcs/sim_1/imports/new/signal_generator_tb.vhd" "5d4cf1cd323308c2ac2d318dc83f63b69491b26a" "20201102161759.944":
+  entity signal_generator_tb at 22( 477) + 0 on 11;
+  architecture behavioral of signal_generator_tb at 37( 869) + 0 on 12;

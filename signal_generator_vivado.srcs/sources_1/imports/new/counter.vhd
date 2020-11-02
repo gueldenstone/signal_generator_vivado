@@ -22,7 +22,7 @@ signal cntr : unsigned(N-1 downto 0) := (others => '0');
 begin
   process (clk)
   begin
-    if rising_edge(clk) then
+    if falling_edge(clk) then
       cntr <= cntr + 1;
     end if;
   end process;

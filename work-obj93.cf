@@ -1,16 +1,16 @@
 v 4
-file . "signal_generator_vivado.srcs/sources_1/imports/new/signal_generator.vhd" "2092ccce866d2aeb95ec69b7db5f652bfbb26b43" "20201027170352.117":
+file . "signal_generator_vivado.srcs/sources_1/imports/new/signal_generator.vhd" "bffe9b49a8124cc4c20c3d2b4819d69caeec75df" "20201029211837.428":
   entity signal_generator at 22( 474) + 0 on 13;
-  architecture behavioral of signal_generator at 41( 1047) + 0 on 14;
-file . "signal_generator_vivado.srcs/sources_1/imports/new/lut.vhd" "c0b72be33567939aeb9a7955ab27176dd2e7500c" "20201027170352.117":
+  architecture behavioral of signal_generator at 44( 1147) + 0 on 14;
+file . "signal_generator_vivado.srcs/sources_1/imports/new/lut.vhd" "c0b72be33567939aeb9a7955ab27176dd2e7500c" "20201029211837.428":
   entity lut at 22( 461) + 0 on 19;
   architecture behavioral of lut at 47( 1083) + 0 on 20;
-file . "signal_generator_vivado.srcs/sources_1/imports/new/counter.vhd" "fd1da7b3279d9ce20bd6680e16beb97313ca0289" "20201027170352.117":
+file . "signal_generator_vivado.srcs/sources_1/imports/new/counter.vhd" "d156d286e10f7a009a1b0f603031c98c0b7c4caf" "20201029211837.428":
   entity bincntr at 2( 1) + 0 on 17;
   architecture impl of bincntr at 20( 310) + 0 on 18;
-file . "signal_generator_vivado.srcs/sources_1/imports/new/clock_divider.vhd" "86f160c213879efccf856dd0f74c168e23621f37" "20201027170352.117":
+file . "signal_generator_vivado.srcs/sources_1/imports/new/clock_divider.vhd" "86f160c213879efccf856dd0f74c168e23621f37" "20201029211837.428":
   entity clk_divider at 2( 1) + 0 on 15;
   architecture behavioral of clk_divider at 34( 628) + 0 on 16;
-file . "signal_generator_vivado.srcs/sim_1/imports/new/signal_generator_tb.vhd" "03529f8d6b8d82da4c7be329399236a1b3da6808" "20201027170352.117":
+file . "signal_generator_vivado.srcs/sim_1/imports/new/signal_generator_tb.vhd" "5d4cf1cd323308c2ac2d318dc83f63b69491b26a" "20201029211837.428":
   entity signal_generator_tb at 22( 477) + 0 on 11;
   architecture behavioral of signal_generator_tb at 37( 869) + 0 on 12;

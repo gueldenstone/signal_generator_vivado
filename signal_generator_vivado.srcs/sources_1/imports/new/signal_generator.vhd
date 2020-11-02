@@ -33,14 +33,18 @@ use IEEE.numeric_std.all;
 --use UNISIM.VComponents.all;
 
 entity signal_generator is
-    Port (i_clk_12mhz : in std_logic;
+    Port (
+          i_clk_12mhz : in std_logic;
           o_clk_1mhz : out std_logic := '0';
-          o_dac1_data: out std_logic_vector(11 downto 0) := (others => '0'));
+          o_dac1_data: out std_logic_vector(11 downto 0) := (others => '0')
+--          o_dac2_data : out std_logic_vector(11 downto 0) := (others => '0')
+          );
 end signal_generator;
 
 architecture Behavioral of signal_generator is
   signal clk_1mhz : std_logic := '0';
-  signal lut_address : std_ulogic_vector(6 downto 0) := (others => '0');
+  signal lut1_address : std_ulogic_vector(6 downto 0) := (others => '0');
+--  signal lut2_address : std_ulogic_vector(6 downto 0) := (others => '0');
   -- signal write_lut : std_logic;
   -- signal lut_data_in : std_logic_vector(7 downto 0);
 
@@ -70,8 +74,6 @@ architecture Behavioral of signal_generator is
     (
         clk : in std_logic;
         address : in std_ulogic_vector(6 downto 0) := (others => '0');
-        -- we : in std_logic;
-        -- data_in : in std_logic_vector(11 downto 0);
         data_out : out std_logic_vector(11 downto 0)
     );
 end component;
@@ -85,7 +87,7 @@ begin
     clk_out => clk_1mhz -- output is 1MHz
   );
   
-  lut_counter : bincntr
+  lut1_counter : bincntr
   generic map
   (
     N => 7
@@ -94,19 +96,42 @@ begin
   (
     clk => clk_1mhz,
     enable => '1',
-    cnt => lut_address
+    cnt => lut1_address
   );
 
   lut1 : lut
   port map
   (
     clk => clk_1mhz,
-    address => lut_address,
+    address => lut1_address,
     -- we => write_lut,
     -- data_in => lut_data_in,
     data_out => o_dac1_data
   );
 
+
+--  lut2_counter : bincntr
+--  generic map
+--  (
+--    N => 7
+--  )
+--  port map
+--  (
+--    clk => clk_1mhz,
+--    enable => '1',
+--    cnt => lut2_address
+--  );
+
+
+--  lut2 : lut
+--  port map
+--  (
+--    clk => clk_1mhz,
+--    address => lut2_address,
+--    data_out => o_dac2_data
+--  );
+
+  -- outout clock for wrt and clk
   o_clk_1mhz <= clk_1mhz;
 
 end Behavioral;

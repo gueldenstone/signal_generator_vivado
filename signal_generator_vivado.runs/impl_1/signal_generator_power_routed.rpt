@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date             : Tue Oct 27 18:10:20 2020
-| Host             : elitebook-lgu running 64-bit Ubuntu 20.04.1 LTS
+| Date             : Mon Nov  2 17:20:08 2020
+| Host             : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command          : report_power -file signal_generator_power_routed.rpt -pb signal_generator_power_summary_routed.pb -rpx signal_generator_power_routed.rpx
 | Design           : signal_generator
 | Device           : xc7s25csga225-1
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |       83 |       --- |             --- |
+| Slice Logic    |    <0.001 |       84 |       --- |             --- |
 |   LUT as Logic |    <0.001 |       34 |     14600 |            0.23 |
 |   F7/F8 Muxes  |    <0.001 |       11 |     14600 |            0.08 |
 |   Register     |    <0.001 |       25 |     29200 |            0.09 |
 |   CARRY4       |    <0.001 |        4 |      3650 |            0.11 |
-|   Others       |     0.000 |        4 |       --- |             --- |
+|   Others       |     0.000 |        5 |       --- |             --- |
 | Signals        |    <0.001 |       47 |       --- |             --- |
-| I/O            |     0.003 |       14 |       150 |            9.33 |
+| I/O            |     0.003 |       26 |       150 |           17.33 |
 | Static Power   |     0.061 |          |           |                 |
 | Total          |     0.065 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+

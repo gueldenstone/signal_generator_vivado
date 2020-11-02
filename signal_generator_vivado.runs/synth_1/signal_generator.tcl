@@ -27,7 +27,6 @@ set_property webtalk.parent_dir /home/lukas/beuth-cloud/02_DigiSys_CAE/Projektau
 set_property parent.project_path /home/lukas/beuth-cloud/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property board_part_repo_paths {/home/lukas/tools/Xilinx/Vivado/2019.2/data/boards/board_files} [current_project]
 set_property board_part digilentinc.com:cmod-s7-25:part0:1.0 [current_project]
 set_property ip_output_repo /home/lukas/beuth-cloud/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
