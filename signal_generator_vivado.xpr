@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="/home/lukas/beuth-cloud/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.xpr">
+<Project Version="7" Minor="44" Path="/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="77ee92a1bc6f426a9695a74db8de5d6c"/>
