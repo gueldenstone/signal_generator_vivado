@@ -3,42 +3,21 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
--- entity clk_divider is
---   port
---   (
---     clk_in : in  std_logic;
---     clk_out : out std_logic
---   );
--- end clk_divider;
-
--- architecture impl of clk_divider is
--- signal cntr : std_logic_vector(3 downto 0) := (others => '0');
-
--- begin
---   process (clk_in)
---   begin
---     if rising_edge(clk_in) then
---       cntr <= cntr + 1;
---     end if;
---   end process;
---   clk_out <= (cntr(3) and cntr(2));
--- end impl;
-
 entity clk_divider is
-    Port (
-        clk_in : in  STD_LOGIC;
-        clk_out: out STD_LOGIC
+    port (
+        clk_in : in  std_logic;
+        clk_out: out std_logic
     );
 end clk_divider;
 
-architecture Behavioral of clk_divider is
-    signal temp: STD_LOGIC := '0';
+architecture behavioral of clk_divider is
+    signal temp: std_logic := '0';
     signal counter : integer range 0 to 124999 := 0;
 begin
     process (clk_in) begin
         if rising_edge(clk_in) then
             if (counter = 5) then
-                temp <= NOT(temp);
+                temp <= not(temp);
                 counter <= 0;
             else
                 counter <= counter + 1;
@@ -46,4 +25,4 @@ begin
         end if;
     end process;
     clk_out <= temp;
-end Behavioral;
+end behavioral;

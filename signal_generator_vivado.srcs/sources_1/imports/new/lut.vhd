@@ -1,40 +1,9 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 10/14/2020 09:00:59 PM
--- Design Name: 
--- Module Name: lut - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.Numeric_Std.all;
--- use IEEE.Std_Logic_Arith.all;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity lut is
-    Port 
+    port 
     (
         clk : in std_logic;
         address : in std_ulogic_vector;
@@ -44,7 +13,7 @@ entity lut is
     );
 end lut;
 
-architecture Behavioral of lut is
+architecture behavioral of lut is
     type lut_type is array (0 to ((2**address'length))-1) of std_logic_vector(data_out'range);
     constant lut_data : lut_type := (
 
@@ -114,4 +83,4 @@ begin
     -- end process;
 
     data_out <= lut_data(to_integer(unsigned(address)));
-end Behavioral;
+end behavioral;

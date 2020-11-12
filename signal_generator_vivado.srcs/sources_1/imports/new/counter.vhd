@@ -7,18 +7,18 @@ use ieee.numeric_std.all;
 entity bincntr is
   generic
   (
-    N : integer := 27
+    n : integer := 27
   );
   port
   (
     clk : in  std_logic;
     enable : in std_logic;
-    cnt : out std_logic_vector(N-1 downto 0) := (others => '0')
+    cnt : out std_logic_vector(n-1 downto 0) := (others => '0')
   );
 end bincntr;
 
 architecture impl of bincntr is
-signal cntr : unsigned(N-1 downto 0) := (others => '0');
+signal cntr : unsigned(n-1 downto 0) := (others => '0');
 begin
   process (clk)
   begin
