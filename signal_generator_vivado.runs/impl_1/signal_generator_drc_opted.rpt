@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Nov  4 14:54:20 2020
+| Date         : Wed Nov 11 22:45:21 2020
 | Host         : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command      : report_drc -file signal_generator_drc_opted.rpt -pb signal_generator_drc_opted.pb -rpx signal_generator_drc_opted.rpx
 | Design       : signal_generator

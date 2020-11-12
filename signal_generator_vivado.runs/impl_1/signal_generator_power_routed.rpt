@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date             : Wed Nov  4 14:54:38 2020
+| Date             : Wed Nov 11 22:45:41 2020
 | Host             : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command          : report_power -file signal_generator_power_routed.rpt -pb signal_generator_power_summary_routed.pb -rpx signal_generator_power_routed.rpx
 | Design           : signal_generator
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.065        |
+| Total On-Chip Power (W)  | 0.058        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.004        |
-| Device Static (W)        | 0.061        |
+| Dynamic (W)              | 0.000        |
+| Device Static (W)        | 0.058        |
 | Effective TJA (C/W)      | 3.7          |
 | Max Ambient (C)          | 84.8         |
 | Junction Temperature (C) | 25.2         |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |       83 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       34 |     14600 |            0.23 |
-|   F7/F8 Muxes  |    <0.001 |       11 |     14600 |            0.08 |
-|   Register     |    <0.001 |       25 |     29200 |            0.09 |
-|   CARRY4       |    <0.001 |        4 |      3650 |            0.11 |
-|   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |    <0.001 |       47 |       --- |             --- |
-| I/O            |     0.003 |       14 |       150 |            9.33 |
-| Static Power   |     0.061 |          |           |                 |
-| Total          |     0.065 |          |           |                 |
+| Slice Logic    |    <0.001 |       54 |       --- |             --- |
+|   LUT as Logic |    <0.001 |        7 |     14600 |            0.05 |
+|   CARRY4       |    <0.001 |        7 |      3650 |            0.19 |
+|   Register     |    <0.001 |       30 |     29200 |            0.10 |
+|   Others       |     0.000 |        9 |       --- |             --- |
+| Signals        |    <0.001 |       52 |       --- |             --- |
+| Block RAM      |     0.000 |      1.5 |        45 |            3.33 |
+| I/O            |    <0.001 |       14 |       150 |            9.33 |
+| Static Power   |     0.058 |          |           |                 |
+| Total          |     0.058 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,8 +73,8 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.005 |       0.000 |      0.005 |
-| Vccaux    |       1.800 |     0.010 |       0.000 |      0.009 |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vccaux    |       1.800 |     0.009 |       0.000 |      0.009 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -136,10 +136,8 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------+-----------+
-| Name             | Power (W) |
-+------------------+-----------+
-| signal_generator |     0.004 |
-+------------------+-----------+
++------+-----------+
+| Name | Power (W) |
++------+-----------+
 
 

@@ -66,6 +66,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7s25csga225-1
   set_property board_part digilentinc.com:cmod-s7-25:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
@@ -74,7 +75,9 @@ set rc [catch {
   set_property parent.project_path /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.xpr [current_project]
   set_property ip_output_repo /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
   add_files -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/signal_generator.dcp
+  read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
   read_xdc /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/constrs_1/imports/new/signal_generator.xdc
   link_design -top signal_generator -part xc7s25csga225-1
   close_msg_db -file init_design.pb
@@ -171,6 +174,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
   catch { write_mem_info -force signal_generator.mmi }
   write_bitstream -force signal_generator.bit 
   catch {write_debug_probes -quiet -force signal_generator}

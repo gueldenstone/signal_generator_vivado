@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Nov  4 14:54:23 2020
+| Date         : Wed Nov 11 22:45:24 2020
 | Host         : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command      : report_control_sets -verbose -file signal_generator_control_sets_placed.rpt
 | Design       : signal_generator
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |     3 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |     7 |
+| Unused register locations in slices containing registers |    10 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -42,10 +42,10 @@ Table of Contents
 | Total control sets |     3 |
 | >= 0 to < 4        |     1 |
 | >= 4 to < 6        |     0 |
-| >= 6 to < 8        |     1 |
+| >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     0 |
+| >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     1 |
 +--------------------+-------+
@@ -58,7 +58,7 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               9 |            5 |
+| No           | No                    | No                     |              14 |            4 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              16 |            4 |
 | Yes          | No                    | No                     |               0 |            0 |
@@ -74,7 +74,7 @@ Table of Contents
 |      Clock Signal      | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +------------------------+---------------+------------------+------------------+----------------+
 |  i_clk_12mhz_IBUF_BUFG |               |                  |                1 |              2 |
-| ~divider/clk           |               |                  |                4 |              7 |
+| ~divider/clka          |               |                  |                3 |             12 |
 |  i_clk_12mhz_IBUF_BUFG |               | divider/temp     |                4 |             16 |
 +------------------------+---------------+------------------+------------------+----------------+
 

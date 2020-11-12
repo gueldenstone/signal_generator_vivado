@@ -13,7 +13,7 @@ entity bincntr is
   (
     clk : in  std_logic;
     enable : in std_logic;
-    cnt : out std_ulogic_vector(N-1 downto 0) := (others => '0')
+    cnt : out std_logic_vector(N-1 downto 0) := (others => '0')
   );
 end bincntr;
 
@@ -27,5 +27,5 @@ begin
     end if;
   end process;
 
-  cnt <= (others => '0') when enable = '0' else std_ulogic_vector(cntr);
+  cnt <= (others => '0') when enable = '0' else std_logic_vector(cntr);
 end impl;
