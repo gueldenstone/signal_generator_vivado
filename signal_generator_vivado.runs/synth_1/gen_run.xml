@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s25csga225-1" LaunchTime="1607528505">
-  <File Type="PA-TCL" Name="signal_generator.tcl"/>
-  <File Type="REPORTS-TCL" Name="signal_generator_reports.tcl"/>
-  <File Type="RDS-RDS" Name="signal_generator.vds"/>
+<GenRun Id="synth_1" LaunchPart="xc7s25csga225-1" LaunchTime="1607533033">
+  <File Type="VDS-TIMING-PB" Name="signal_generator_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="signal_generator_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="signal_generator.dcp"/>
   <File Type="RDS-UTIL-PB" Name="signal_generator_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="signal_generator_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="signal_generator_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="signal_generator.vds"/>
+  <File Type="REPORTS-TCL" Name="signal_generator_reports.tcl"/>
+  <File Type="PA-TCL" Name="signal_generator.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/clock_divider.vhd">
@@ -68,7 +71,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/adc.vhd">
       <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -116,6 +118,7 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="sin_12x16"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="xadc_wiz"/>
   <BlockFileSet Type="BlockSrcs" Name="square_12x16"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
 </GenRun>

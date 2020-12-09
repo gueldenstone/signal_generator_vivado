@@ -104,12 +104,18 @@ begin
     begin
         if(rising_edge(eoc)) then
             if(mux_state = ch1) then
+                mux_addr <= vaux5_reg;
                 mux_state <= ch2;
             elsif(mux_state = ch2) then
+                mux_addr <= vaux12_reg;
                 mux_state <= ch1;
+                
             end if;
         end if;
     end process;
+    
+    adc1_data <= adc_data when mux_state = ch1 else adc1_data;
+    adc2_data <= adc_data when mux_state = ch2 else adc2_data;
 
     ain32_data <= to_integer(unsigned(adc1_data));
     ain33_data <= to_integer(unsigned(adc2_data));

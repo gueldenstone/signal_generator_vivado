@@ -37,7 +37,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .route_design.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log signal_generator.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source signal_generator.tcl -notrace
 
 

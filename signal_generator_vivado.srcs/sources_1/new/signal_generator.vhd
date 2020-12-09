@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 library work;
 -- use work.clock_divider.all;
 use work.dac.all;
--- use work.adc.all;
+use work.adc.all;
 
 entity signal_generator is
     port (
@@ -75,18 +75,18 @@ begin
   );
 
   -- ADC Channel 1
-  -- adc_ch : adc_channels
-  -- port map (
-  --   clk_100mhz => clk_100mhz,
-  --   vp_in => vp_in,
-  --   vn_in => vn_in,
-  --   vaux5_p => i_vaux5_p,
-  --   vaux5_n => i_vaux5_n,
-  --   vaux12_p => i_vaux12_p,
-  --   vaux12_n => i_vaux12_n,
-  --   ain32_data => analog1_data,
-  --   ain33_data => analog2_data
-  -- );
+  adc_ch : adc_channels
+  port map (
+    clk_100mhz => clk_100mhz,
+    vp_in => vp_in,
+    vn_in => vn_in,
+    vaux5_p => i_vaux5_p,
+    vaux5_n => i_vaux5_n,
+    vaux12_p => i_vaux12_p,
+    vaux12_n => i_vaux12_n,
+    ain32_data => analog1_data,
+    ain33_data => analog2_data
+  );
 
   -- dac channel 1
   dac_channel1 : dac_entity
@@ -108,7 +108,9 @@ begin
   o_clk_wrt1 <= clk_24mhz;
   o_clk_wrt2 <= clk_24mhz;
 
-  -- -- frequenz mit adc anpassen
+  -- frequenz mit adc anpassen
+  phase1 <= analog1_data;
+  phase2 <= analog2_data;
   -- process (clk_100mhz) begin
   --   if(rising_edge(btn1)) then
   --   end if;
