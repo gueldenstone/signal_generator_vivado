@@ -60,95 +60,15 @@ proc step_failed { step } {
   close $ch
 }
 
-
-start_step init_design
-set ACTIVE_STEP init_design
-set rc [catch {
-  create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
-  set_param xicom.use_bs_reader 1
-  create_project -in_memory -part xc7s25csga225-1
-  set_property board_part digilentinc.com:cmod-s7-25:part0:1.0 [current_project]
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.cache/wt [current_project]
-  set_property parent.project_path /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.xpr [current_project]
-  set_property ip_output_repo /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.cache/ip [current_project]
-  set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
-  add_files -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/signal_generator.dcp
-  read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-  read_xdc /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/constrs_1/imports/new/signal_generator.xdc
-  link_design -top signal_generator -part xc7s25csga225-1
-  close_msg_db -file init_design.pb
-} RESULT]
-if {$rc} {
-  step_failed init_design
-  return -code error $RESULT
-} else {
-  end_step init_design
-  unset ACTIVE_STEP 
-}
-
-start_step opt_design
-set ACTIVE_STEP opt_design
-set rc [catch {
-  create_msg_db opt_design.pb
-  opt_design 
-  write_checkpoint -force signal_generator_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file signal_generator_drc_opted.rpt -pb signal_generator_drc_opted.pb -rpx signal_generator_drc_opted.rpx"
-  close_msg_db -file opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed opt_design
-  return -code error $RESULT
-} else {
-  end_step opt_design
-  unset ACTIVE_STEP 
-}
-
-start_step place_design
-set ACTIVE_STEP place_design
-set rc [catch {
-  create_msg_db place_design.pb
-  if { [llength [get_debug_cores -quiet] ] > 0 }  { 
-    implement_debug_core 
-  } 
-  place_design 
-  write_checkpoint -force signal_generator_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file signal_generator_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file signal_generator_utilization_placed.rpt -pb signal_generator_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file signal_generator_control_sets_placed.rpt"
-  close_msg_db -file place_design.pb
-} RESULT]
-if {$rc} {
-  step_failed place_design
-  return -code error $RESULT
-} else {
-  end_step place_design
-  unset ACTIVE_STEP 
-}
-
-start_step phys_opt_design
-set ACTIVE_STEP phys_opt_design
-set rc [catch {
-  create_msg_db phys_opt_design.pb
-  phys_opt_design 
-  write_checkpoint -force signal_generator_physopt.dcp
-  close_msg_db -file phys_opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed phys_opt_design
-  return -code error $RESULT
-} else {
-  end_step phys_opt_design
-  unset ACTIVE_STEP 
-}
+set_msg_config  -id {Labtoolstcl 44-513}  -string {{ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210376AC741CA}}  -suppress 
 
 start_step route_design
 set ACTIVE_STEP route_design
 set rc [catch {
   create_msg_db route_design.pb
+  set_param chipscope.maxJobs 1
+  open_checkpoint signal_generator_physopt.dcp
+  set_property webtalk.parent_dir /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.cache/wt [current_project]
   route_design 
   write_checkpoint -force signal_generator_routed.dcp
   create_report "impl_1_route_report_drc_0" "report_drc -file signal_generator_drc_routed.rpt -pb signal_generator_drc_routed.pb -rpx signal_generator_drc_routed.rpx"
@@ -174,7 +94,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force signal_generator.mmi }
   write_bitstream -force signal_generator.bit 
   catch {write_debug_probes -quiet -force signal_generator}

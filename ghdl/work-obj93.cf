@@ -1,0 +1,14 @@
+v 4
+file . "../signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd" "633c330e1f4c55468d3ecefb2b811a88f87a2aac" "20201113180950.367":
+  entity signal_generator at 1( 0) + 0 on 16;
+  architecture behavioral of signal_generator at 16( 336) + 0 on 17;
+file . "../signal_generator_vivado.srcs/sources_1/new/clock_divider.vhd" "fdc44655ce2cffea6e9aa573e43750677143ada3" "20201113180950.420":
+  entity clk_divider at 2( 1) + 0 on 18;
+  architecture behavioral of clk_divider at 13( 199) + 0 on 19;
+file . "../signal_generator_vivado.srcs/sources_1/new/dac_channel.vhd" "1360a3b7f32b269a936ffcd1affc196abb488c97" "20201113180950.268":
+  package dac at 1( 0) + 0 on 13;
+  entity dac_channel at 17( 487) + 0 on 14;
+  architecture impl of dac_channel at 31( 885) + 0 on 15;
+file . "../signal_generator_vivado.srcs/sim_1/imports/new/signal_generator_tb.vhd" "474e08c024f3eef73b54830314c1aa1ac3c61d72" "20201113180950.193":
+  entity signal_generator_tb at 22( 477) + 0 on 11;
+  architecture behavioral of signal_generator_tb at 37( 869) + 0 on 12;

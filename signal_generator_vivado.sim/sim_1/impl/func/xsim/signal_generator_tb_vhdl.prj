@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"signal_generator_tb_func_impl.vhd" \
+"../../../../../signal_generator_vivado.srcs/sim_1/imports/new/signal_generator_tb.vhd" \
+
+# Do not sort compile order
+nosort

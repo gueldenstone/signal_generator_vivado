@@ -1,0 +1,89 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 77ee92a1bc6f426a9695a74db8de5d6c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot signal_generator_tb_func_impl xil_defaultlib.signal_generator_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package ieee.std_logic_textio
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="11100110")(0,7)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="01111000")(0,7)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111100000001000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10000000000000000000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="01000000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000000000...]
+Compiling architecture fdre_v of entity unisim.FDRE [\FDRE(is_c_inverted='1')\]
+Compiling architecture carry4_v of entity unisim.CARRY4 [carry4_default]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="1001")(0,3)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0010")(0,3)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="01001011")(0,7)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="01101001")(0,7)\]
+Compiling architecture gnd_v of entity unisim.GND [gnd_default]
+Compiling architecture structure of entity xil_defaultlib.ram_12x16_bindec [ram_12x16_bindec_default]
+Compiling architecture muxf8_v of entity unisim.MUXF8 [muxf8_default]
+Compiling architecture muxf7_v of entity unisim.MUXF7 [muxf7_default]
+Compiling architecture structure of entity xil_defaultlib.ram_12x16_blk_mem_gen_mux [ram_12x16_blk_mem_gen_mux_defaul...]
+Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(doa_reg=1,in...]
+Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(doa_reg=1,initp_06="11...]
+Compiling architecture fdce_v of entity unisim.FDCE [\FDCE(init='1')\]
+Compiling architecture structure of entity xil_defaultlib.ram_12x16_blk_mem_gen_prim_wrapper_init [ram_12x16_blk_mem_gen_prim_wrapp...]
+Compiling architecture structure of entity xil_defaultlib.ram_12x16_blk_mem_gen_prim_width [ram_12x16_blk_mem_gen_prim_width...]
+Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(doa_reg=1,in...]
+Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(doa_reg=1,initp_00="00...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_wrapper_init__parameterized11\ [\ram_12x16_blk_mem_gen_prim_wrap...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_width__parameterized11\ [\ram_12x16_blk_mem_gen_prim_widt...]
+Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(doa_reg=1,in...]
+Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(doa_reg=1,init_0d="111...]
+Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(doa_reg=1,in...]
+Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(doa_reg=1,init_00="000...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_wrapper_init__parameterized15\ [\ram_12x16_blk_mem_gen_prim_wrap...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_width__parameterized15\ [\ram_12x16_blk_mem_gen_prim_widt...]
+Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(doa_reg=1,in...]
+Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(doa_reg=1,init_1c="111...]
+Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(doa_reg=1,in...]
+Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(doa_reg=1,init_00="111...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_wrapper_init__parameterized16\ [\ram_12x16_blk_mem_gen_prim_wrap...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_width__parameterized16\ [\ram_12x16_blk_mem_gen_prim_widt...]
+Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(doa_reg=1,in...]
+Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(doa_reg=1,init_58="111...]
+Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(doa_reg=1,in...]
+Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(doa_reg=1,init_00="111...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_wrapper_init__parameterized17\ [\ram_12x16_blk_mem_gen_prim_wrap...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_width__parameterized17\ [\ram_12x16_blk_mem_gen_prim_widt...]
+Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(doa_reg=1,in...]
+Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(doa_reg=1,initp_00="11...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_wrapper_init__parameterized3\ [\ram_12x16_blk_mem_gen_prim_wrap...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_width__parameterized3\ [\ram_12x16_blk_mem_gen_prim_widt...]
+Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(doa_reg=1,in...]
+Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(doa_reg=1,initp_00="00...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_wrapper_init__parameterized7\ [\ram_12x16_blk_mem_gen_prim_wrap...]
+Compiling architecture structure of entity xil_defaultlib.\ram_12x16_blk_mem_gen_prim_width__parameterized7\ [\ram_12x16_blk_mem_gen_prim_widt...]
+Compiling architecture structure of entity xil_defaultlib.ram_12x16_blk_mem_gen_generic_cstr [ram_12x16_blk_mem_gen_generic_cs...]
+Compiling architecture structure of entity xil_defaultlib.ram_12x16_blk_mem_gen_top [ram_12x16_blk_mem_gen_top_defaul...]
+Compiling architecture structure of entity xil_defaultlib.ram_12x16_blk_mem_gen_v8_4_4_synth [ram_12x16_blk_mem_gen_v8_4_4_syn...]
+Compiling architecture structure of entity xil_defaultlib.ram_12x16_blk_mem_gen_v8_4_4 [ram_12x16_blk_mem_gen_v8_4_4_def...]
+Compiling architecture structure of entity xil_defaultlib.ram_12x16 [ram_12x16_default]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10111000")(0,7)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10001011")(0,7)\]
+Compiling architecture lut1_v of entity unisim.LUT1 [\LUT1(init="0001")(0,3)\]
+Compiling architecture structure of entity xil_defaultlib.dac_channel [dac_channel_default]
+Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(1,9)(1,1)(1,4)(1,7)\]
+Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
+Compiling architecture obuf_v of entity unisim.OBUF [\OBUF(1,9)(1,7)(1,4)\]
+Compiling architecture structure of entity xil_defaultlib.signal_generator [signal_generator_default]
+Compiling architecture behavioral of entity xil_defaultlib.signal_generator_tb
+ERROR: [XSIM 43-3409] Failed to compile generated C file xsim.dir/signal_generator_tb_func_impl/obj/xsim_7.c.
+ERROR: [XSIM 43-3915] Encountered a fatal error. Cannot continue. Exiting... 

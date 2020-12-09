@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Nov 12 22:29:16 2020
+# Process ID: 27536
+# Current directory: /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado
+# Command line: vivado
+# Log file: /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/vivado.log
+# Journal file: /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.xpr
+update_compile_order -fileset sources_1

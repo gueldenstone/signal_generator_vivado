@@ -1,1 +1,0 @@
-uart.vhd,vhdl,xil_defaultlib,../../../../signal_generator_vivado.srcs/sources_1/ip/uart/sim/uart.vhd,

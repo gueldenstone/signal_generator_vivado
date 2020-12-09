@@ -39,26 +39,26 @@ architecture Behavioral of signal_generator_tb is
     Port 
     (
         i_clk_12mhz : in std_logic;
-        o_clk_1mhz : out std_logic;
-        o_dac1_data: out std_logic_vector(11 downto 0);
-        o_dac2_data: out std_logic_vector(11 downto 0)
+        o_clk_wrt1 : out std_logic;
+        o_dac1_data: out std_logic_vector(11 downto 0)
+        -- o_dac2_data: out std_logic_vector(11 downto 0)
     );
     end component;
 
     -- test signals
     signal i_clk_12mhz_sim : std_logic := '0';
     signal o_clk_1mhz_sim : std_logic := '0';
-    signal o_dac1_data : std_logic_vector(11 downto 0) := (others => '0');
-    signal o_dac2_data : std_logic_vector(11 downto 0) := (others => '0');
+    signal o_dac1_data_sim : std_logic_vector(11 downto 0) := (others => '0');
+    -- signal o_dac2_data : std_logic_vector(11 downto 0) := (others => '0');
 
 begin
     testobject : signal_generator
     port map
     (
         i_clk_12mhz => i_clk_12mhz_sim,
-        o_clk_1mhz => o_clk_1mhz_sim,
-        o_dac1_data => o_dac1_data,
-        o_dac2_data => o_dac2_data
+        o_clk_wrt1 => o_clk_1mhz_sim,
+        o_dac1_data => o_dac1_data_sim
+        -- o_dac2_data => o_dac2_data
     );
 
     process

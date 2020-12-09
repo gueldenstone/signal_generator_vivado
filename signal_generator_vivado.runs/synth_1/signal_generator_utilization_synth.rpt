@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Nov 11 22:44:00 2020
+| Date         : Wed Dec  9 16:43:17 2020
 | Host         : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command      : report_utilization -file signal_generator_utilization_synth.rpt -pb signal_generator_utilization_synth.pb
 | Design       : signal_generator
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |    7 |     0 |     14600 |  0.05 |
-|   LUT as Logic          |    7 |     0 |     14600 |  0.05 |
+| Slice LUTs*             |   15 |     0 |     14600 |  0.10 |
+|   LUT as Logic          |   15 |     0 |     14600 |  0.10 |
 |   LUT as Memory         |    0 |     0 |      5000 |  0.00 |
-| Slice Registers         |   30 |     0 |     29200 |  0.10 |
-|   Register as Flip Flop |   30 |     0 |     29200 |  0.10 |
+| Slice Registers         |   18 |     0 |     29200 |  0.06 |
+|   Register as Flip Flop |   18 |     0 |     29200 |  0.06 |
 |   Register as Latch     |    0 |     0 |     29200 |  0.00 |
 | F7 Muxes                |    0 |     0 |      7300 |  0.00 |
 | F8 Muxes                |    0 |     0 |      3650 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 30    |          Yes |       Reset |            - |
+| 18    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   14 |     0 |       150 |  9.33 |
+| Bonded IOB                  |   28 |     0 |       150 | 18.67 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         3 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         3 |  0.00 |
@@ -112,7 +112,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |        32 |  3.13 |
+| BUFGCTRL   |    2 |     0 |        32 |  6.25 |
 | BUFIO      |    0 |     0 |        12 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         3 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         3 |  0.00 |
@@ -145,25 +145,26 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   30 |        Flop & Latch |
-| OBUF     |   13 |                  IO |
-| CARRY4   |    7 |          CarryLogic |
-| LUT4     |    4 |                 LUT |
-| LUT5     |    2 |                 LUT |
-| LUT1     |    2 |                 LUT |
-| IBUF     |    1 |                  IO |
-| BUFG     |    1 |               Clock |
+| OBUF     |   26 |                  IO |
+| LUT3     |   24 |                 LUT |
+| FDRE     |   18 |        Flop & Latch |
+| CARRY4   |    4 |          CarryLogic |
+| LUT1     |    3 |                 LUT |
+| IBUF     |    2 |                  IO |
+| BUFG     |    2 |               Clock |
 +----------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+---------------+------+
-|    Ref Name   | Used |
-+---------------+------+
-| blk_mem_gen_0 |    1 |
-+---------------+------+
++--------------+------+
+|   Ref Name   | Used |
++--------------+------+
+| square_12x16 |    1 |
+| sin_12x16    |    1 |
+| clk_wiz_0    |    1 |
++--------------+------+
 
 
 9. Instantiated Netlists
