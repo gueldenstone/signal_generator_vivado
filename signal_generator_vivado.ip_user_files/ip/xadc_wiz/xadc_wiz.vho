@@ -61,7 +61,6 @@ COMPONENT xadc_wiz
     drdy_out : OUT STD_LOGIC;
     do_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     dclk_in : IN STD_LOGIC;
-    reset_in : IN STD_LOGIC;
     vp_in : IN STD_LOGIC;
     vn_in : IN STD_LOGIC;
     vauxp5 : IN STD_LOGIC;
@@ -90,7 +89,6 @@ your_instance_name : xadc_wiz
     drdy_out => drdy_out,
     do_out => do_out,
     dclk_in => dclk_in,
-    reset_in => reset_in,
     vp_in => vp_in,
     vn_in => vn_in,
     vauxp5 => vauxp5,

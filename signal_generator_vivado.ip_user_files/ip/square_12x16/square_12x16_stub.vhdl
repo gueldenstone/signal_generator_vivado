@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
--- Date        : Wed Dec  9 15:22:10 2020
+-- Date        : Wed Dec  9 15:22:08 2020
 -- Host        : elitebook-manjaro-lgu running 64-bit Manjaro Linux
--- Command     : write_vhdl -force -mode synth_stub
---               /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x16/square_12x16_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top square_12x16 -prefix
+--               square_12x16_ square_12x16_stub.vhdl
 -- Design      : square_12x16
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7s25csga225-1

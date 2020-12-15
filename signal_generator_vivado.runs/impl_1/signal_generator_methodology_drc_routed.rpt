@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Dec  9 18:02:50 2020
+| Date         : Mon Dec 14 15:08:28 2020
 | Host         : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command      : report_methodology -file signal_generator_methodology_drc_routed.rpt -pb signal_generator_methodology_drc_routed.pb -rpx signal_generator_methodology_drc_routed.rpx
 | Design       : signal_generator
@@ -23,802 +23,400 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 157
-+-----------+------------------+------------------------------------------------+------------+
-| Rule      | Severity         | Description                                    | Violations |
-+-----------+------------------+------------------------------------------------+------------+
-| TIMING-6  | Critical Warning | No common primary clock between related clocks | 2          |
-| TIMING-8  | Critical Warning | No common period between related clocks        | 2          |
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                    | 6          |
-| TIMING-16 | Warning          | Large setup violation                          | 115        |
-| TIMING-20 | Warning          | Non-clocked latch                              | 32         |
-+-----------+------------------+------------------------------------------------+------------+
+             Violations found: 76
++-----------+------------------+----------------------------------------------------+------------+
+| Rule      | Severity         | Description                                        | Violations |
++-----------+------------------+----------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 1          |
+| TIMING-6  | Critical Warning | No common primary clock between related clocks     | 1          |
+| TIMING-7  | Critical Warning | No common node between related clocks              | 1          |
+| TIMING-8  | Critical Warning | No common period between related clocks            | 1          |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 5          |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1          |
+| TIMING-16 | Warning          | Large setup violation                              | 64         |
+| TIMING-18 | Warning          | Missing input or output delay                      | 2          |
++-----------+------------------+----------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-TIMING-6#1 Critical Warning
-No common primary clock between related clocks  
-The clocks clk_out4_clk_wiz_0 and clk_out4_clk_wiz_0_1 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out4_clk_wiz_0] -to [get_clocks clk_out4_clk_wiz_0_1]
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock clock_manager/inst/clk_12mhz is defined downstream of clock sys_clk_pin and overrides its insertion delay and/or waveform definition
 Related violations: <none>
 
-TIMING-6#2 Critical Warning
+TIMING-6#1 Critical Warning
 No common primary clock between related clocks  
-The clocks clk_out4_clk_wiz_0_1 and clk_out4_clk_wiz_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_out4_clk_wiz_0_1] -to [get_clocks clk_out4_clk_wiz_0]
+The clocks sys_clk_pin and clk_6mhz5540_clk_wiz_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks sys_clk_pin] -to [get_clocks clk_6mhz5540_clk_wiz_0]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks sys_clk_pin and clk_6mhz5540_clk_wiz_0 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks sys_clk_pin] -to [get_clocks clk_6mhz5540_clk_wiz_0]
 Related violations: <none>
 
 TIMING-8#1 Critical Warning
 No common period between related clocks  
-The clocks clk_out4_clk_wiz_0 and clk_out4_clk_wiz_0_1 are found related (timed together) but have no common (expandable) period
-Related violations: <none>
-
-TIMING-8#2 Critical Warning
-No common period between related clocks  
-The clocks clk_out4_clk_wiz_0_1 and clk_out4_clk_wiz_0 are found related (timed together) but have no common (expandable) period
+The clocks sys_clk_pin and clk_6mhz5540_clk_wiz_0 are found related (timed together) but have no common (expandable) period
 Related violations: <none>
 
 TIMING-17#1 Critical Warning
 Non-clocked sequential cell  
-The clock pin adc_ch/mux_addr_reg[0]/C is not reached by a timing clock
+The clock pin adc/mux_state_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#2 Critical Warning
 Non-clocked sequential cell  
-The clock pin adc_ch/mux_addr_reg[3]/C is not reached by a timing clock
+The clock pin dac/ch1_off_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#3 Critical Warning
 Non-clocked sequential cell  
-The clock pin adc_ch/mux_addr_reg[4]/C is not reached by a timing clock
+The clock pin dac/ch2_off_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#4 Critical Warning
 Non-clocked sequential cell  
-The clock pin adc_ch/mux_state_reg/C is not reached by a timing clock
+The clock pin dac/state1_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#5 Critical Warning
 Non-clocked sequential cell  
-The clock pin dac_channel1/state1_reg/C is not reached by a timing clock
+The clock pin dac/state2_reg/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#6 Critical Warning
-Non-clocked sequential cell  
-The clock pin dac_channel1/state2_reg/C is not reached by a timing clock
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock clock_manager/inst/clk_12mhz is created on an inappropriate internal pin clock_manager/inst/clk_12mhz. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
 Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.680 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica_2/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[3]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.017 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[4]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -1.714 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica_5/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[3]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.037 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[6]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -1.736 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.085 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[9]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -1.760 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[2]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.113 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[7]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -1.765 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica_2/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[3]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.121 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[5]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -1.769 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[3]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.135 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[8]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -1.772 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.155 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[10]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -1.794 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.175 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[11]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -1.795 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[2]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.231 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[11]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -1.799 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[2]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.239 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[9]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -1.802 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.252 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[12]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -1.815 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]_replica_2/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[2]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.272 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[14]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#13 Warning
 Large setup violation  
-There is a large setup violation of -1.932 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.348 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[15]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#14 Warning
 Large setup violation  
-There is a large setup violation of -2.016 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.356 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[13]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#15 Warning
 Large setup violation  
-There is a large setup violation of -2.049 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.357 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[12]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#16 Warning
 Large setup violation  
-There is a large setup violation of -2.064 ns between dac_channel1/phase1_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[0]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.370 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[16]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#17 Warning
 Large setup violation  
-There is a large setup violation of -2.159 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[0]_replica/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.373 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[14]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#18 Warning
 Large setup violation  
-There is a large setup violation of -2.161 ns between dac_channel1/phase1_reg[1]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[5]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.390 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[18]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#19 Warning
 Large setup violation  
-There is a large setup violation of -2.178 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[0]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.447 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[15]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#20 Warning
 Large setup violation  
-There is a large setup violation of -2.202 ns between dac_channel1/phase2_reg[11]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[12]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.466 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[19]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#21 Warning
 Large setup violation  
-There is a large setup violation of -2.241 ns between dac_channel1/phase1_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[1]_replica/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.468 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[13]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#22 Warning
 Large setup violation  
-There is a large setup violation of -2.248 ns between dac_channel1/phase1_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[1]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.471 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[16]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#23 Warning
 Large setup violation  
-There is a large setup violation of -2.281 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.474 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[17]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#24 Warning
 Large setup violation  
-There is a large setup violation of -2.306 ns between dac_channel1/phase2_reg[11]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[13]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.487 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[18]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#25 Warning
 Large setup violation  
-There is a large setup violation of -2.308 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[1]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.488 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[20]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#26 Warning
 Large setup violation  
-There is a large setup violation of -2.314 ns between dac_channel1/phase2_reg[13]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[14]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.508 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[22]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#27 Warning
 Large setup violation  
-There is a large setup violation of -2.379 ns between dac_channel1/phase2_reg[13]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[15]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.561 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[19]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#28 Warning
 Large setup violation  
-There is a large setup violation of -2.406 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica_2/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.582 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[17]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#29 Warning
 Large setup violation  
-There is a large setup violation of -2.482 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.584 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[23]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#30 Warning
 Large setup violation  
-There is a large setup violation of -2.497 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[3]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.586 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[20]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#31 Warning
 Large setup violation  
-There is a large setup violation of -2.542 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.592 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[21]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#32 Warning
 Large setup violation  
-There is a large setup violation of -2.561 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.602 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[22]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#33 Warning
 Large setup violation  
-There is a large setup violation of -2.573 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.606 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[24]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#34 Warning
 Large setup violation  
-There is a large setup violation of -2.574 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.626 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[26]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#35 Warning
 Large setup violation  
-There is a large setup violation of -2.596 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.676 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[23]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#36 Warning
 Large setup violation  
-There is a large setup violation of -2.613 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[2]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.697 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[21]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#37 Warning
 Large setup violation  
-There is a large setup violation of -2.619 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.700 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[24]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#38 Warning
 Large setup violation  
-There is a large setup violation of -2.621 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[6]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.702 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[27]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#39 Warning
 Large setup violation  
-There is a large setup violation of -2.626 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.710 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[25]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#40 Warning
 Large setup violation  
-There is a large setup violation of -2.634 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.716 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[26]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#41 Warning
 Large setup violation  
-There is a large setup violation of -2.646 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[4]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.723 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[28]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#42 Warning
 Large setup violation  
-There is a large setup violation of -2.650 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.743 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[30]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#43 Warning
 Large setup violation  
-There is a large setup violation of -2.657 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.790 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[27]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#44 Warning
 Large setup violation  
-There is a large setup violation of -2.663 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.811 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[25]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#45 Warning
 Large setup violation  
-There is a large setup violation of -2.672 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.815 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[28]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#46 Warning
 Large setup violation  
-There is a large setup violation of -2.675 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.819 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[31]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#47 Warning
 Large setup violation  
-There is a large setup violation of -2.676 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.827 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase2_reg[29]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#48 Warning
 Large setup violation  
-There is a large setup violation of -2.676 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.831 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[30]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#49 Warning
 Large setup violation  
-There is a large setup violation of -2.681 ns between dac_channel1/phase1_reg[1]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[2]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.905 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[31]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#50 Warning
 Large setup violation  
-There is a large setup violation of -2.682 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -10.926 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[29]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#51 Warning
 Large setup violation  
-There is a large setup violation of -2.686 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -8.977 ns between step_scale1/phase1[0]_i_222_psbram_replica_29/C (clocked by sys_clk_pin) and dac/phase1_reg[0]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#52 Warning
 Large setup violation  
-There is a large setup violation of -2.702 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[6]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.014 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_17/C (clocked by sys_clk_pin) and dac/phase2_reg[0]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#53 Warning
 Large setup violation  
-There is a large setup violation of -2.710 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.220 ns between step_scale2/phase2[0]_i_222_psbram_1_replica_17/C (clocked by sys_clk_pin) and dac/phase2_reg[1]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#54 Warning
 Large setup violation  
-There is a large setup violation of -2.722 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.383 ns between step_scale1/phase1[0]_i_222_psbram_replica_29/C (clocked by sys_clk_pin) and dac/phase1_reg[1]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#55 Warning
 Large setup violation  
-There is a large setup violation of -2.725 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.619 ns between step_scale1/phase1[0]_i_222_psbram_4_replica_10/C (clocked by sys_clk_pin) and dac/phase1_reg[2]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#56 Warning
 Large setup violation  
-There is a large setup violation of -2.728 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.678 ns between step_scale1/phase1[0]_i_222_psbram_4_replica_10/C (clocked by sys_clk_pin) and dac/phase1_reg[3]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#57 Warning
 Large setup violation  
-There is a large setup violation of -2.732 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[14].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.727 ns between step_scale2/phase2[0]_i_222_psbram_replica_15/C (clocked by sys_clk_pin) and dac/phase2_reg[2]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#58 Warning
 Large setup violation  
-There is a large setup violation of -2.738 ns between dac_channel1/phase1_reg[1]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[3]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.790 ns between step_scale2/phase2[0]_i_222_psbram_replica_15/C (clocked by sys_clk_pin) and dac/phase2_reg[3]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#59 Warning
 Large setup violation  
-There is a large setup violation of -2.741 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.860 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[4]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#60 Warning
 Large setup violation  
-There is a large setup violation of -2.741 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.876 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[6]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#61 Warning
 Large setup violation  
-There is a large setup violation of -2.748 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica_2/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.950 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[7]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#62 Warning
 Large setup violation  
-There is a large setup violation of -2.749 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[5]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.971 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[5]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#63 Warning
 Large setup violation  
-There is a large setup violation of -2.761 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[10]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.974 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[8]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#64 Warning
 Large setup violation  
-There is a large setup violation of -2.763 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[8]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -9.990 ns between step_scale1/phase1[0]_i_222_psbram_2_replica_2/C (clocked by sys_clk_pin) and dac/phase1_reg[10]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
-TIMING-16#65 Warning
-Large setup violation  
-There is a large setup violation of -2.775 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on btn0 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
-TIMING-16#66 Warning
-Large setup violation  
-There is a large setup violation of -2.792 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#67 Warning
-Large setup violation  
-There is a large setup violation of -2.797 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[14].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#68 Warning
-Large setup violation  
-There is a large setup violation of -2.805 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica_2/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#69 Warning
-Large setup violation  
-There is a large setup violation of -2.808 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_replica_2/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#70 Warning
-Large setup violation  
-There is a large setup violation of -2.815 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#71 Warning
-Large setup violation  
-There is a large setup violation of -2.816 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#72 Warning
-Large setup violation  
-There is a large setup violation of -2.819 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#73 Warning
-Large setup violation  
-There is a large setup violation of -2.833 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[11]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#74 Warning
-Large setup violation  
-There is a large setup violation of -2.835 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#75 Warning
-Large setup violation  
-There is a large setup violation of -2.835 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#76 Warning
-Large setup violation  
-There is a large setup violation of -2.836 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[14].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#77 Warning
-Large setup violation  
-There is a large setup violation of -2.839 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[9]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#78 Warning
-Large setup violation  
-There is a large setup violation of -2.842 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#79 Warning
-Large setup violation  
-There is a large setup violation of -2.847 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#80 Warning
-Large setup violation  
-There is a large setup violation of -2.849 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#81 Warning
-Large setup violation  
-There is a large setup violation of -2.855 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_2/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#82 Warning
-Large setup violation  
-There is a large setup violation of -2.856 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#83 Warning
-Large setup violation  
-There is a large setup violation of -2.866 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#84 Warning
-Large setup violation  
-There is a large setup violation of -2.873 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#85 Warning
-Large setup violation  
-There is a large setup violation of -2.874 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_replica_2/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#86 Warning
-Large setup violation  
-There is a large setup violation of -2.881 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#87 Warning
-Large setup violation  
-There is a large setup violation of -2.906 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[8]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#88 Warning
-Large setup violation  
-There is a large setup violation of -2.907 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#89 Warning
-Large setup violation  
-There is a large setup violation of -2.911 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#90 Warning
-Large setup violation  
-There is a large setup violation of -2.932 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[10]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#91 Warning
-Large setup violation  
-There is a large setup violation of -2.949 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#92 Warning
-Large setup violation  
-There is a large setup violation of -2.957 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#93 Warning
-Large setup violation  
-There is a large setup violation of -2.962 ns between dac_channel1/phase1_reg[1]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[4]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#94 Warning
-Large setup violation  
-There is a large setup violation of -2.969 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_1/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#95 Warning
-Large setup violation  
-There is a large setup violation of -2.972 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[7]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#96 Warning
-Large setup violation  
-There is a large setup violation of -2.972 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#97 Warning
-Large setup violation  
-There is a large setup violation of -2.993 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#98 Warning
-Large setup violation  
-There is a large setup violation of -3.002 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[12]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#99 Warning
-Large setup violation  
-There is a large setup violation of -3.007 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#100 Warning
-Large setup violation  
-There is a large setup violation of -3.016 ns between dac_channel1/phase2_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase2_reg[7]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#101 Warning
-Large setup violation  
-There is a large setup violation of -3.026 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[14]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#102 Warning
-Large setup violation  
-There is a large setup violation of -3.027 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[11]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#103 Warning
-Large setup violation  
-There is a large setup violation of -3.040 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[9]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#104 Warning
-Large setup violation  
-There is a large setup violation of -3.050 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[14].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#105 Warning
-Large setup violation  
-There is a large setup violation of -3.058 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#106 Warning
-Large setup violation  
-There is a large setup violation of -3.075 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]_replica_2/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#107 Warning
-Large setup violation  
-There is a large setup violation of -3.099 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#108 Warning
-Large setup violation  
-There is a large setup violation of -3.099 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#109 Warning
-Large setup violation  
-There is a large setup violation of -3.109 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#110 Warning
-Large setup violation  
-There is a large setup violation of -3.120 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[13]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#111 Warning
-Large setup violation  
-There is a large setup violation of -3.122 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[15]/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#112 Warning
-Large setup violation  
-There is a large setup violation of -3.141 ns between dac_channel1/phase1_reg[5]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/phase1_reg[9]_replica/D (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#113 Warning
-Large setup violation  
-There is a large setup violation of -3.157 ns between dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#114 Warning
-Large setup violation  
-There is a large setup violation of -3.239 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEAREGCE (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#115 Warning
-Large setup violation  
-There is a large setup violation of -3.260 ns between dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]_replica/C (clocked by clk_out4_clk_wiz_0_1) and dac_channel1/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/REGCEB (clocked by clk_out4_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[0] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#2 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[10] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[10]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#3 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[11] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[11]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#4 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[12] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[12]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#5 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[13] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[13]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#6 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[14] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[14]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#7 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[15] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[15]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#8 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[1] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#9 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[2] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#10 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[3] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#11 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[4] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#12 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[5] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#13 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[6] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#14 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[7] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[7]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#15 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[8] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[8]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#16 Warning
-Non-clocked latch  
-The latch adc_ch/adc1_data_reg[9] cannot be properly analyzed as its control pin adc_ch/adc1_data_reg[9]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#17 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[0] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#18 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[10] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[10]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#19 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[11] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[11]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#20 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[12] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[12]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#21 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[13] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[13]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#22 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[14] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[14]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#23 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[15] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[15]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#24 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[1] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#25 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[2] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#26 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[3] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#27 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[4] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#28 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[5] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#29 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[6] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#30 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[7] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[7]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#31 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[8] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[8]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#32 Warning
-Non-clocked latch  
-The latch adc_ch/adc2_data_reg[9] cannot be properly analyzed as its control pin adc_ch/adc2_data_reg[9]/G is not reached by a timing clock
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on btn1 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 

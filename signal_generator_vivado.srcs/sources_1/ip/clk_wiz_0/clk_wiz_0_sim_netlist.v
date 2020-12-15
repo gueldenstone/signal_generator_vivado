@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-// Date        : Sat Nov 21 16:06:35 2020
+// Date        : Sun Dec 13 14:51:23 2020
 // Host        : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 // Command     : write_verilog -force -mode funcsim
 //               /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
@@ -14,81 +14,54 @@
 
 (* NotValidForBitStream *)
 module clk_wiz_0
-   (clk_out1,
-    clk_out2,
-    clk_out3,
-    clk_out4,
-    reset,
-    locked,
-    clk_in1);
-  output clk_out1;
-  output clk_out2;
-  output clk_out3;
-  output clk_out4;
-  input reset;
-  output locked;
-  input clk_in1;
+   (clk_24mhz,
+    clk_6mhz5540,
+    clk_12mhz);
+  output clk_24mhz;
+  output clk_6mhz5540;
+  input clk_12mhz;
 
-  (* IBUF_LOW_PWR *) wire clk_in1;
-  wire clk_out1;
-  wire clk_out2;
-  wire clk_out3;
-  wire clk_out4;
-  wire locked;
-  wire reset;
+  (* IBUF_LOW_PWR *) wire clk_12mhz;
+  wire clk_24mhz;
+  wire clk_6mhz5540;
 
   clk_wiz_0_clk_wiz_0_clk_wiz inst
-       (.clk_in1(clk_in1),
-        .clk_out1(clk_out1),
-        .clk_out2(clk_out2),
-        .clk_out3(clk_out3),
-        .clk_out4(clk_out4),
-        .locked(locked),
-        .reset(reset));
+       (.clk_12mhz(clk_12mhz),
+        .clk_24mhz(clk_24mhz),
+        .clk_6mhz5540(clk_6mhz5540));
 endmodule
 
 (* ORIG_REF_NAME = "clk_wiz_0_clk_wiz" *) 
 module clk_wiz_0_clk_wiz_0_clk_wiz
-   (clk_out1,
-    clk_out2,
-    clk_out3,
-    clk_out4,
-    reset,
-    locked,
-    clk_in1);
-  output clk_out1;
-  output clk_out2;
-  output clk_out3;
-  output clk_out4;
-  input reset;
-  output locked;
-  input clk_in1;
+   (clk_24mhz,
+    clk_6mhz5540,
+    clk_12mhz);
+  output clk_24mhz;
+  output clk_6mhz5540;
+  input clk_12mhz;
 
-  wire clk_in1;
-  wire clk_in1_clk_wiz_0;
-  wire clk_out1;
-  wire clk_out1_clk_wiz_0;
-  wire clk_out2;
-  wire clk_out2_clk_wiz_0;
-  wire clk_out3;
-  wire clk_out3_clk_wiz_0;
-  wire clk_out4;
-  wire clk_out4_clk_wiz_0;
+  wire clk_12mhz;
+  wire clk_12mhz_clk_wiz_0;
+  wire clk_24mhz;
+  wire clk_24mhz_clk_wiz_0;
+  wire clk_6mhz5540;
+  wire clk_6mhz5540_clk_wiz_0;
   wire clkfbout_buf_clk_wiz_0;
   wire clkfbout_clk_wiz_0;
-  wire locked;
-  wire reset;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED;
   wire NLW_mmcm_adv_inst_DRDY_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_LOCKED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_PSDONE_UNCONNECTED;
   wire [15:0]NLW_mmcm_adv_inst_DO_UNCONNECTED;
 
@@ -103,45 +76,37 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   IBUF #(
     .IOSTANDARD("DEFAULT")) 
     clkin1_ibufg
-       (.I(clk_in1),
-        .O(clk_in1_clk_wiz_0));
+       (.I(clk_12mhz),
+        .O(clk_12mhz_clk_wiz_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout1_buf
-       (.I(clk_out1_clk_wiz_0),
-        .O(clk_out1));
+       (.I(clk_24mhz_clk_wiz_0),
+        .O(clk_24mhz));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout2_buf
-       (.I(clk_out2_clk_wiz_0),
-        .O(clk_out2));
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkout3_buf
-       (.I(clk_out3_clk_wiz_0),
-        .O(clk_out3));
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkout4_buf
-       (.I(clk_out4_clk_wiz_0),
-        .O(clk_out4));
+       (.I(clk_6mhz5540_clk_wiz_0),
+        .O(clk_6mhz5540));
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(58.500000),
+    .CLKFBOUT_MULT_F(56.250000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(83.333000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(5.625000),
+    .CLKOUT0_DIVIDE_F(28.125000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(7),
+    .CLKOUT1_DIVIDE(103),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
-    .CLKOUT2_DIVIDE(14),
+    .CLKOUT2_DIVIDE(1),
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
-    .CLKOUT3_DIVIDE(29),
+    .CLKOUT3_DIVIDE(1),
     .CLKOUT3_DUTY_CYCLE(0.500000),
     .CLKOUT3_PHASE(0.000000),
     .CLKOUT3_USE_FINE_PS("FALSE"),
@@ -176,17 +141,17 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .CLKFBOUT(clkfbout_clk_wiz_0),
         .CLKFBOUTB(NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED),
         .CLKFBSTOPPED(NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED),
-        .CLKIN1(clk_in1_clk_wiz_0),
+        .CLKIN1(clk_12mhz_clk_wiz_0),
         .CLKIN2(1'b0),
         .CLKINSEL(1'b1),
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
-        .CLKOUT0(clk_out1_clk_wiz_0),
+        .CLKOUT0(clk_24mhz_clk_wiz_0),
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
-        .CLKOUT1(clk_out2_clk_wiz_0),
+        .CLKOUT1(clk_6mhz5540_clk_wiz_0),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
-        .CLKOUT2(clk_out3_clk_wiz_0),
+        .CLKOUT2(NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
-        .CLKOUT3(clk_out4_clk_wiz_0),
+        .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),
         .CLKOUT4(NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED),
         .CLKOUT5(NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED),
@@ -198,13 +163,13 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .DO(NLW_mmcm_adv_inst_DO_UNCONNECTED[15:0]),
         .DRDY(NLW_mmcm_adv_inst_DRDY_UNCONNECTED),
         .DWE(1'b0),
-        .LOCKED(locked),
+        .LOCKED(NLW_mmcm_adv_inst_LOCKED_UNCONNECTED),
         .PSCLK(1'b0),
         .PSDONE(NLW_mmcm_adv_inst_PSDONE_UNCONNECTED),
         .PSEN(1'b0),
         .PSINCDEC(1'b0),
         .PWRDWN(1'b0),
-        .RST(reset));
+        .RST(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

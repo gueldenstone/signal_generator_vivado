@@ -62,7 +62,6 @@ entity xadc_wiz is
     do_out          : out  STD_LOGIC_VECTOR (15 downto 0);   -- Output data bus for dynamic reconfiguration port
     drdy_out        : out  STD_LOGIC;                        -- Data ready signal for the dynamic reconfiguration port
     dclk_in         : in  STD_LOGIC;                         -- Clock input for the dynamic reconfiguration port
-    reset_in        : in  STD_LOGIC;                         -- Reset signal for the System Monitor control logic
     vauxp5          : in  STD_LOGIC;                         -- Auxiliary Channel 5
     vauxn5          : in  STD_LOGIC;
     vauxp12         : in  STD_LOGIC;                         -- Auxiliary Channel 12
@@ -80,7 +79,7 @@ end xadc_wiz;
 architecture xilinx of xadc_wiz is
 
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of xilinx : architecture is "xadc_wiz,xadc_wiz_v3_3_7,{component_name=xadc_wiz,enable_axi=false,enable_axi4stream=false,dclk_frequency=100,enable_busy=true,enable_convst=false,enable_convstclk=false,enable_dclk=true,enable_drp=true,enable_eoc=true,enable_eos=true,enable_vbram_alaram=false,enable_vccddro_alaram=false,enable_Vccint_Alaram=false,enable_Vccaux_alaram=falseenable_vccpaux_alaram=false,enable_vccpint_alaram=false,ot_alaram=false,user_temp_alaram=false,timing_mode=continuous,channel_averaging=64,sequencer_mode=on,startup_channel_selection=contineous_sequence}";
+  attribute CORE_GENERATION_INFO of xilinx : architecture is "xadc_wiz,xadc_wiz_v3_3_7,{component_name=xadc_wiz,enable_axi=false,enable_axi4stream=false,dclk_frequency=12,enable_busy=true,enable_convst=false,enable_convstclk=false,enable_dclk=true,enable_drp=true,enable_eoc=true,enable_eos=true,enable_vbram_alaram=false,enable_vccddro_alaram=false,enable_Vccint_Alaram=false,enable_Vccaux_alaram=falseenable_vccpaux_alaram=false,enable_vccpint_alaram=false,ot_alaram=false,user_temp_alaram=false,timing_mode=continuous,channel_averaging=64,sequencer_mode=on,startup_channel_selection=contineous_sequence}";
 
 
   signal FLOAT_VCCAUX_ALARM : std_logic;
@@ -148,7 +147,7 @@ begin
      generic map(
         INIT_40 => X"2000", -- config reg 0
         INIT_41 => X"21AF", -- config reg 1
-        INIT_42 => X"0400", -- config reg 2
+        INIT_42 => X"0A00", -- config reg 2
         INIT_48 => X"0000", -- Sequencer channel selection
         INIT_49 => X"1020", -- Sequencer channel selection
         INIT_4A => X"0000", -- Sequencer Average selection
@@ -156,7 +155,7 @@ begin
         INIT_4C => X"0000", -- Sequencer Bipolar selection
         INIT_4D => X"0000", -- Sequencer Bipolar selection
         INIT_4E => X"0000", -- Sequencer Acq time selection
-        INIT_4F => X"1020", -- Sequencer Acq time selection
+        INIT_4F => X"0000", -- Sequencer Acq time selection
         INIT_50 => X"B5ED", -- Temp alarm trigger
         INIT_51 => X"57E4", -- Vccint upper alarm limit
         INIT_52 => X"A147", -- Vccaux upper alarm limit
@@ -179,7 +178,7 @@ port map (
         DEN                 => den_in,
         DI(15 downto 0)     => di_in(15 downto 0),
         DWE                 => dwe_in,
-        RESET               => reset_in,
+        RESET               => '0',
         VAUXN(15 downto 0)  => aux_channel_n(15 downto 0),
         VAUXP(15 downto 0)  => aux_channel_p(15 downto 0),
         ALM                 => alm_int,

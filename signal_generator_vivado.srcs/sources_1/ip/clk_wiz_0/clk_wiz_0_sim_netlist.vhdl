@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
--- Date        : Sat Nov 21 16:06:35 2020
+-- Date        : Sun Dec 13 14:51:24 2020
 -- Host        : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
@@ -16,24 +16,18 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity clk_wiz_0_clk_wiz_0_clk_wiz is
   port (
-    clk_out1 : out STD_LOGIC;
-    clk_out2 : out STD_LOGIC;
-    clk_out3 : out STD_LOGIC;
-    clk_out4 : out STD_LOGIC;
-    reset : in STD_LOGIC;
-    locked : out STD_LOGIC;
-    clk_in1 : in STD_LOGIC
+    clk_24mhz : out STD_LOGIC;
+    clk_6mhz5540 : out STD_LOGIC;
+    clk_12mhz : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of clk_wiz_0_clk_wiz_0_clk_wiz : entity is "clk_wiz_0_clk_wiz";
 end clk_wiz_0_clk_wiz_0_clk_wiz;
 
 architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
-  signal clk_in1_clk_wiz_0 : STD_LOGIC;
-  signal clk_out1_clk_wiz_0 : STD_LOGIC;
-  signal clk_out2_clk_wiz_0 : STD_LOGIC;
-  signal clk_out3_clk_wiz_0 : STD_LOGIC;
-  signal clk_out4_clk_wiz_0 : STD_LOGIC;
+  signal clk_12mhz_clk_wiz_0 : STD_LOGIC;
+  signal clk_24mhz_clk_wiz_0 : STD_LOGIC;
+  signal clk_6mhz5540_clk_wiz_0 : STD_LOGIC;
   signal clkfbout_buf_clk_wiz_0 : STD_LOGIC;
   signal clkfbout_clk_wiz_0 : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED : STD_LOGIC;
@@ -41,12 +35,15 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   signal NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED : STD_LOGIC;
+  signal NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED : STD_LOGIC;
+  signal NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_DRDY_UNCONNECTED : STD_LOGIC;
+  signal NLW_mmcm_adv_inst_LOCKED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_PSDONE_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
@@ -60,8 +57,6 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   attribute IFD_DELAY_VALUE of clkin1_ibufg : label is "AUTO";
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of clkout2_buf : label is "PRIMITIVE";
-  attribute BOX_TYPE of clkout3_buf : label is "PRIMITIVE";
-  attribute BOX_TYPE of clkout4_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of mmcm_adv_inst : label is "PRIMITIVE";
 begin
 clkf_buf: unisim.vcomponents.BUFG
@@ -74,50 +69,40 @@ clkin1_ibufg: unisim.vcomponents.IBUF
       IOSTANDARD => "DEFAULT"
     )
         port map (
-      I => clk_in1,
-      O => clk_in1_clk_wiz_0
+      I => clk_12mhz,
+      O => clk_12mhz_clk_wiz_0
     );
 clkout1_buf: unisim.vcomponents.BUFG
      port map (
-      I => clk_out1_clk_wiz_0,
-      O => clk_out1
+      I => clk_24mhz_clk_wiz_0,
+      O => clk_24mhz
     );
 clkout2_buf: unisim.vcomponents.BUFG
      port map (
-      I => clk_out2_clk_wiz_0,
-      O => clk_out2
-    );
-clkout3_buf: unisim.vcomponents.BUFG
-     port map (
-      I => clk_out3_clk_wiz_0,
-      O => clk_out3
-    );
-clkout4_buf: unisim.vcomponents.BUFG
-     port map (
-      I => clk_out4_clk_wiz_0,
-      O => clk_out4
+      I => clk_6mhz5540_clk_wiz_0,
+      O => clk_6mhz5540
     );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
       BANDWIDTH => "OPTIMIZED",
-      CLKFBOUT_MULT_F => 58.500000,
+      CLKFBOUT_MULT_F => 56.250000,
       CLKFBOUT_PHASE => 0.000000,
       CLKFBOUT_USE_FINE_PS => false,
       CLKIN1_PERIOD => 83.333000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 5.625000,
+      CLKOUT0_DIVIDE_F => 28.125000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
-      CLKOUT1_DIVIDE => 7,
+      CLKOUT1_DIVIDE => 103,
       CLKOUT1_DUTY_CYCLE => 0.500000,
       CLKOUT1_PHASE => 0.000000,
       CLKOUT1_USE_FINE_PS => false,
-      CLKOUT2_DIVIDE => 14,
+      CLKOUT2_DIVIDE => 1,
       CLKOUT2_DUTY_CYCLE => 0.500000,
       CLKOUT2_PHASE => 0.000000,
       CLKOUT2_USE_FINE_PS => false,
-      CLKOUT3_DIVIDE => 29,
+      CLKOUT3_DIVIDE => 1,
       CLKOUT3_DUTY_CYCLE => 0.500000,
       CLKOUT3_PHASE => 0.000000,
       CLKOUT3_USE_FINE_PS => false,
@@ -153,17 +138,17 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKFBOUT => clkfbout_clk_wiz_0,
       CLKFBOUTB => NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED,
       CLKFBSTOPPED => NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED,
-      CLKIN1 => clk_in1_clk_wiz_0,
+      CLKIN1 => clk_12mhz_clk_wiz_0,
       CLKIN2 => '0',
       CLKINSEL => '1',
       CLKINSTOPPED => NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED,
-      CLKOUT0 => clk_out1_clk_wiz_0,
+      CLKOUT0 => clk_24mhz_clk_wiz_0,
       CLKOUT0B => NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED,
-      CLKOUT1 => clk_out2_clk_wiz_0,
+      CLKOUT1 => clk_6mhz5540_clk_wiz_0,
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
-      CLKOUT2 => clk_out3_clk_wiz_0,
+      CLKOUT2 => NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED,
       CLKOUT2B => NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED,
-      CLKOUT3 => clk_out4_clk_wiz_0,
+      CLKOUT3 => NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED,
       CLKOUT3B => NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED,
       CLKOUT4 => NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED,
       CLKOUT5 => NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED,
@@ -175,13 +160,13 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       DO(15 downto 0) => NLW_mmcm_adv_inst_DO_UNCONNECTED(15 downto 0),
       DRDY => NLW_mmcm_adv_inst_DRDY_UNCONNECTED,
       DWE => '0',
-      LOCKED => locked,
+      LOCKED => NLW_mmcm_adv_inst_LOCKED_UNCONNECTED,
       PSCLK => '0',
       PSDONE => NLW_mmcm_adv_inst_PSDONE_UNCONNECTED,
       PSEN => '0',
       PSINCDEC => '0',
       PWRDWN => '0',
-      RST => reset
+      RST => '0'
     );
 end STRUCTURE;
 library IEEE;
@@ -190,13 +175,9 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity clk_wiz_0 is
   port (
-    clk_out1 : out STD_LOGIC;
-    clk_out2 : out STD_LOGIC;
-    clk_out3 : out STD_LOGIC;
-    clk_out4 : out STD_LOGIC;
-    reset : in STD_LOGIC;
-    locked : out STD_LOGIC;
-    clk_in1 : in STD_LOGIC
+    clk_24mhz : out STD_LOGIC;
+    clk_6mhz5540 : out STD_LOGIC;
+    clk_12mhz : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of clk_wiz_0 : entity is true;
@@ -206,12 +187,8 @@ architecture STRUCTURE of clk_wiz_0 is
 begin
 inst: entity work.clk_wiz_0_clk_wiz_0_clk_wiz
      port map (
-      clk_in1 => clk_in1,
-      clk_out1 => clk_out1,
-      clk_out2 => clk_out2,
-      clk_out3 => clk_out3,
-      clk_out4 => clk_out4,
-      locked => locked,
-      reset => reset
+      clk_12mhz => clk_12mhz,
+      clk_24mhz => clk_24mhz,
+      clk_6mhz5540 => clk_6mhz5540
     );
 end STRUCTURE;

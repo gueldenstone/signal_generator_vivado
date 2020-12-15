@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
--- Date        : Wed Dec  9 15:21:14 2020
+-- Date        : Wed Dec  9 15:21:13 2020
 -- Host        : elitebook-manjaro-lgu running 64-bit Manjaro Linux
--- Command     : write_vhdl -force -mode funcsim
---               /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x16/sin_12x16_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top sin_12x16 -prefix
+--               sin_12x16_ sin_12x16_sim_netlist.vhdl
 -- Design      : sin_12x16
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,8 +19,6 @@ entity sin_12x16_bindec is
     ena_array : out STD_LOGIC_VECTOR ( 10 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sin_12x16_bindec : entity is "bindec";
 end sin_12x16_bindec;
 
 architecture STRUCTURE of sin_12x16_bindec is
@@ -325,8 +323,6 @@ entity sin_12x16_blk_mem_gen_mux is
     \douta[8]_INST_0_i_2_6\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \douta[8]_INST_0_i_2_7\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sin_12x16_blk_mem_gen_mux : entity is "blk_mem_gen_mux";
 end sin_12x16_blk_mem_gen_mux;
 
 architecture STRUCTURE of sin_12x16_blk_mem_gen_mux is
@@ -2001,8 +1997,6 @@ entity sin_12x16_blk_mem_gen_prim_wrapper_init is
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sin_12x16_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end sin_12x16_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of sin_12x16_blk_mem_gen_prim_wrapper_init is
@@ -7612,8 +7606,6 @@ entity sin_12x16_blk_mem_gen_prim_width is
     addra : in STD_LOGIC_VECTOR ( 15 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sin_12x16_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end sin_12x16_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of sin_12x16_blk_mem_gen_prim_width is
@@ -8267,8 +8259,6 @@ entity sin_12x16_blk_mem_gen_generic_cstr is
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sin_12x16_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end sin_12x16_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of sin_12x16_blk_mem_gen_generic_cstr is
@@ -9292,8 +9282,6 @@ entity sin_12x16_blk_mem_gen_top is
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sin_12x16_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end sin_12x16_blk_mem_gen_top;
 
 architecture STRUCTURE of sin_12x16_blk_mem_gen_top is
@@ -9321,8 +9309,6 @@ entity sin_12x16_blk_mem_gen_v8_4_4_synth is
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sin_12x16_blk_mem_gen_v8_4_4_synth : entity is "blk_mem_gen_v8_4_4_synth";
 end sin_12x16_blk_mem_gen_v8_4_4_synth;
 
 architecture STRUCTURE of sin_12x16_blk_mem_gen_v8_4_4_synth is
@@ -9557,8 +9543,6 @@ entity sin_12x16_blk_mem_gen_v8_4_4 is
   attribute C_WRITE_WIDTH_B of sin_12x16_blk_mem_gen_v8_4_4 : entity is 12;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of sin_12x16_blk_mem_gen_v8_4_4 : entity is "spartan7";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sin_12x16_blk_mem_gen_v8_4_4 : entity is "blk_mem_gen_v8_4_4";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of sin_12x16_blk_mem_gen_v8_4_4 : entity is "yes";
 end sin_12x16_blk_mem_gen_v8_4_4;

@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-// Date        : Wed Dec  9 15:21:14 2020
+// Date        : Wed Dec  9 15:21:13 2020
 // Host        : elitebook-manjaro-lgu running 64-bit Manjaro Linux
-// Command     : write_verilog -force -mode funcsim
-//               /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x16/sin_12x16_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top sin_12x16 -prefix
+//               sin_12x16_ sin_12x16_sim_netlist.v
 // Design      : sin_12x16
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -196,7 +196,6 @@ module sin_12x16
         .web(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "bindec" *) 
 module sin_12x16_bindec
    (ena_array,
     addra);
@@ -396,7 +395,6 @@ module sin_12x16_bindec_0
         .O(enb_array[10]));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module sin_12x16_blk_mem_gen_generic_cstr
    (douta,
     doutb,
@@ -955,7 +953,6 @@ module sin_12x16_blk_mem_gen_generic_cstr
         .clkb(clkb));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_mux" *) 
 module sin_12x16_blk_mem_gen_mux
    (douta,
     addra,
@@ -2407,7 +2404,6 @@ module sin_12x16_blk_mem_gen_mux__parameterized0
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module sin_12x16_blk_mem_gen_prim_width
    (ram_douta,
     ram_doutb,
@@ -3204,7 +3200,6 @@ module sin_12x16_blk_mem_gen_prim_width__parameterized9
         .enb_array(enb_array));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
 module sin_12x16_blk_mem_gen_prim_wrapper_init
    (ram_douta,
     ram_doutb,
@@ -8746,7 +8741,6 @@ module sin_12x16_blk_mem_gen_prim_wrapper_init__parameterized9
         .WEBWE({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module sin_12x16_blk_mem_gen_top
    (douta,
     doutb,
@@ -8802,7 +8796,7 @@ endmodule
 (* C_WEA_WIDTH = "1" *) (* C_WEB_WIDTH = "1" *) (* C_WRITE_DEPTH_A = "65536" *) 
 (* C_WRITE_DEPTH_B = "65536" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
 (* C_WRITE_WIDTH_A = "12" *) (* C_WRITE_WIDTH_B = "12" *) (* C_XDEVICEFAMILY = "spartan7" *) 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module sin_12x16_blk_mem_gen_v8_4_4
    (clka,
     rsta,
@@ -9018,7 +9012,6 @@ module sin_12x16_blk_mem_gen_v8_4_4
         .doutb(doutb));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4_synth" *) 
 module sin_12x16_blk_mem_gen_v8_4_4_synth
    (douta,
     doutb,

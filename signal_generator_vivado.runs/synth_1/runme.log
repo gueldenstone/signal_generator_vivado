@@ -11,39 +11,48 @@
 source signal_generator.tcl -notrace
 Command: synth_design -top signal_generator -part xc7s25csga225-1
 Starting synth_design
-WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
-/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x16/sin_12x16.xci
-/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x16/square_12x16.xci
-
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s25'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s25'
 INFO: [Device 21-403] Loading part xc7s25csga225-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 128839 
+INFO: Helper process launched with PID 31429 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1793.410 ; gain = 202.719 ; free physical = 2369 ; free virtual = 7762
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1793.695 ; gain = 199.688 ; free physical = 2429 ; free virtual = 7974
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'signal_generator' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:28]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-128799-elitebook-manjaro-lgu/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clock_manager' of component 'clk_wiz_0' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:63]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-128799-elitebook-manjaro-lgu/realtime/clk_wiz_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'adc_channels' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:25' bound to instance 'adc_ch' of component 'adc_channels' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:78]
+INFO: [Synth 8-638] synthesizing module 'signal_generator' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:31]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clock_manager' of component 'clk_wiz_0' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/clk_wiz_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'dac_entity' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:26' bound to instance 'dac' of component 'dac_entity' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'dac_entity' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:41]
+INFO: [Synth 8-3491] module 'sin_12x16' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/sin_12x16_stub.vhdl:5' bound to instance 'sinus' of component 'sin_12x16' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:120]
+INFO: [Synth 8-638] synthesizing module 'sin_12x16' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/sin_12x16_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'square_12x16' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/square_12x16_stub.vhdl:5' bound to instance 'square' of component 'square_12x16' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:130]
+INFO: [Synth 8-638] synthesizing module 'square_12x16' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/square_12x16_stub.vhdl:17]
+INFO: [Synth 8-256] done synthesizing module 'dac_entity' (1#1) [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:41]
+INFO: [Synth 8-3491] module 'adc_channels' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:25' bound to instance 'adc' of component 'adc_channels' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:93]
 INFO: [Synth 8-638] synthesizing module 'adc_channels' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:39]
-INFO: [Synth 8-3491] module 'xadc_wiz' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-128799-elitebook-manjaro-lgu/realtime/xadc_wiz_stub.vhdl:5' bound to instance 'adc1' of component 'xadc_wiz' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:80]
-INFO: [Synth 8-638] synthesizing module 'xadc_wiz' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-128799-elitebook-manjaro-lgu/realtime/xadc_wiz_stub.vhdl:30]
-WARNING: [Synth 8-614] signal 'eoc' is read in the process but is not in the sensitivity list [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:103]
-INFO: [Synth 8-256] done synthesizing module 'adc_channels' (1#1) [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:39]
-INFO: [Synth 8-3491] module 'dac_entity' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:23' bound to instance 'dac_channel1' of component 'dac_entity' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:92]
-INFO: [Synth 8-638] synthesizing module 'dac_entity' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:35]
-WARNING: [Synth 8-614] signal 'sig_chg1' is read in the process but is not in the sensitivity list [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:71]
-WARNING: [Synth 8-614] signal 'sig_chg2' is read in the process but is not in the sensitivity list [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:71]
-INFO: [Synth 8-3491] module 'sin_12x16' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-128799-elitebook-manjaro-lgu/realtime/sin_12x16_stub.vhdl:5' bound to instance 'sinus' of component 'sin_12x16' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:101]
-INFO: [Synth 8-638] synthesizing module 'sin_12x16' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-128799-elitebook-manjaro-lgu/realtime/sin_12x16_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'square_12x16' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-128799-elitebook-manjaro-lgu/realtime/square_12x16_stub.vhdl:5' bound to instance 'square' of component 'square_12x16' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:111]
-INFO: [Synth 8-638] synthesizing module 'square_12x16' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-128799-elitebook-manjaro-lgu/realtime/square_12x16_stub.vhdl:17]
-INFO: [Synth 8-256] done synthesizing module 'dac_entity' (2#1) [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd:35]
-INFO: [Synth 8-256] done synthesizing module 'signal_generator' (3#1) [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:28]
+INFO: [Synth 8-3491] module 'xadc_wiz' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/xadc_wiz_stub.vhdl:5' bound to instance 'adc1' of component 'xadc_wiz' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:105]
+INFO: [Synth 8-638] synthesizing module 'xadc_wiz' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/xadc_wiz_stub.vhdl:29]
+INFO: [Synth 8-3491] module 'adc_data_1' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/adc_data_1_stub.vhdl:5' bound to instance 'adc_fifo1' of component 'adc_data_1' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'adc_data_1' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/adc_data_1_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'adc_data_2' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/adc_data_2_stub.vhdl:5' bound to instance 'adc_fifo2' of component 'adc_data_2' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:139]
+INFO: [Synth 8-638] synthesizing module 'adc_data_2' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/adc_data_2_stub.vhdl:18]
+INFO: [Synth 8-256] done synthesizing module 'adc_channels' (2#1) [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:39]
+INFO: [Synth 8-3491] module 'step_scaler' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/step_scaler.vhd:16' bound to instance 'step_scale1' of component 'step_scaler' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'step_scaler' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/step_scaler.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'step_scaler' (3#1) [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/step_scaler.vhd:23]
+INFO: [Synth 8-3491] module 'step_scaler' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/step_scaler.vhd:16' bound to instance 'step_scale2' of component 'step_scaler' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:112]
+INFO: [Synth 8-3491] module 'buttons' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/buttons.vhd:21' bound to instance 'button_manager' of component 'buttons' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:118]
+INFO: [Synth 8-638] synthesizing module 'buttons' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/buttons.vhd:33]
+INFO: [Synth 8-3491] module 'btn_tim_1' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/btn_tim_1_stub.vhdl:5' bound to instance 'timer1' of component 'btn_tim_1' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/buttons.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'btn_tim_1' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/btn_tim_1_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'btn_tim_1' declared at '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/.Xil/Vivado-31353-elitebook-manjaro-lgu/realtime/btn_tim_1_stub.vhdl:5' bound to instance 'timer2' of component 'btn_tim_1' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/buttons.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'buttons' (4#1) [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/buttons.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'signal_generator' (5#1) [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd:31]
+WARNING: [Synth 8-3331] design dac_entity has unconnected port step1[31]
+WARNING: [Synth 8-3331] design dac_entity has unconnected port step2[31]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1857.129 ; gain = 266.438 ; free physical = 2405 ; free virtual = 7799
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1858.414 ; gain = 264.406 ; free physical = 2464 ; free virtual = 8010
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -56,24 +65,32 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1860.098 ; gain = 269.406 ; free physical = 2398 ; free virtual = 7793
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1861.383 ; gain = 267.375 ; free physical = 2458 ; free virtual = 8004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1860.098 ; gain = 269.406 ; free physical = 2398 ; free virtual = 7793
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1861.383 ; gain = 267.375 ; free physical = 2458 ; free virtual = 8004
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1860.098 ; gain = 0.000 ; free physical = 2392 ; free virtual = 7787
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1861.383 ; gain = 0.000 ; free physical = 2451 ; free virtual = 7996
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
+Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/adc_data_2/adc_data_2/adc_data_1_in_context.xdc] for cell 'adc/adc_fifo2'
+Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/adc_data_2/adc_data_2/adc_data_1_in_context.xdc] for cell 'adc/adc_fifo2'
 Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clock_manager'
 Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clock_manager'
-Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/xadc_wiz/xadc_wiz/xadc_wiz_in_context.xdc] for cell 'adc_ch/adc1'
-Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/xadc_wiz/xadc_wiz/xadc_wiz_in_context.xdc] for cell 'adc_ch/adc1'
-Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x16/sin_12x16/sin_12x16_in_context.xdc] for cell 'dac_channel1/sinus'
-Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x16/sin_12x16/sin_12x16_in_context.xdc] for cell 'dac_channel1/sinus'
-Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x16/square_12x16/square_12x16_in_context.xdc] for cell 'dac_channel1/square'
-Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x16/square_12x16/square_12x16_in_context.xdc] for cell 'dac_channel1/square'
+Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/xadc_wiz/xadc_wiz/xadc_wiz_in_context.xdc] for cell 'adc/adc1'
+Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/xadc_wiz/xadc_wiz/xadc_wiz_in_context.xdc] for cell 'adc/adc1'
+Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x16/sin_12x16/sin_12x16_in_context.xdc] for cell 'dac/sinus'
+Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x16/sin_12x16/sin_12x16_in_context.xdc] for cell 'dac/sinus'
+Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x16/square_12x16/square_12x16_in_context.xdc] for cell 'dac/square'
+Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x16/square_12x16/square_12x16_in_context.xdc] for cell 'dac/square'
+Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/adc_data_1/adc_data_1/adc_data_1_in_context.xdc] for cell 'adc/adc_fifo1'
+Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/adc_data_1/adc_data_1/adc_data_1_in_context.xdc] for cell 'adc/adc_fifo1'
+Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/btn_tim_1/btn_tim_1/btn_tim_1_in_context.xdc] for cell 'button_manager/timer1'
+Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/btn_tim_1/btn_tim_1/btn_tim_1_in_context.xdc] for cell 'button_manager/timer1'
+Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/btn_tim_1/btn_tim_1/btn_tim_1_in_context.xdc] for cell 'button_manager/timer2'
+Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/btn_tim_1/btn_tim_1/btn_tim_1_in_context.xdc] for cell 'button_manager/timer2'
 Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/constrs_1/imports/new/signal_generator.xdc]
 WARNING: [Vivado 12-507] No nets matched 'btn1_IBUF'. [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/constrs_1/imports/new/signal_generator.xdc:13]
 WARNING: [Vivado 12-507] No nets matched 'btn0_IBUF'. [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/constrs_1/imports/new/signal_generator.xdc:14]
@@ -81,39 +98,45 @@ Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/constrs_1/imports/new/signal_generator.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/signal_generator_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/constrs_1/imports/new/signal_generator.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/signal_generator_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/signal_generator_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1970.895 ; gain = 0.000 ; free physical = 2304 ; free virtual = 7706
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1975.180 ; gain = 0.000 ; free physical = 2359 ; free virtual = 7905
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1970.895 ; gain = 0.000 ; free physical = 2304 ; free virtual = 7706
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1975.180 ; gain = 0.000 ; free physical = 2359 ; free virtual = 7905
+WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'button_manager/timer1' at clock pin 'CLK' is different from the actual clock period '83.330', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'button_manager/timer2' at clock pin 'CLK' is different from the actual clock period '83.330', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2368 ; free virtual = 7762
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1975.180 ; gain = 381.172 ; free physical = 2443 ; free virtual = 7979
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s25csga225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2368 ; free virtual = 7762
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1975.180 ; gain = 381.172 ; free physical = 2444 ; free virtual = 7979
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for i_clk_12mhz. (constraint file  /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 6).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for i_clk_12mhz. (constraint file  /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for i_clk_12mhz. (constraint file  /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for i_clk_12mhz. (constraint file  /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property DONT_TOUCH = true for adc/adc_fifo2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for clock_manager. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for adc_ch/adc1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for dac_channel1/sinus. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for dac_channel1/square. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for adc/adc1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for dac/sinus. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for dac/square. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for adc/adc_fifo1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for button_manager/timer1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for button_manager/timer2. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2371 ; free virtual = 7765
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1975.180 ; gain = 381.172 ; free physical = 2443 ; free virtual = 7979
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'adc1_data_reg' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:117]
-WARNING: [Synth 8-327] inferring latch for variable 'adc2_data_reg' [/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd:118]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2361 ; free virtual = 7756
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1975.180 ; gain = 381.172 ; free physical = 2419 ; free virtual = 7966
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -126,11 +149,9 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Registers : 
-	                7 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input     12 Bit        Muxes := 2     
-	   2 Input      7 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -138,19 +159,16 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module adc_channels 
-Detailed RTL Component Info : 
-+---Registers : 
-	                7 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      7 Bit        Muxes := 1     
 Module dac_entity 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input     12 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 4     
+Module adc_channels 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -167,12 +185,24 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-3886] merging instance 'adc_ch/mux_addr_reg[1]' (FDR) to 'adc_ch/mux_addr_reg[6]'
-INFO: [Synth 8-3886] merging instance 'adc_ch/mux_addr_reg[2]' (FDS) to 'adc_ch/mux_addr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'adc_ch/mux_addr_reg[5]' (FDR) to 'adc_ch/mux_addr_reg[6]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\adc_ch/mux_addr_reg[6] )
+WARNING: [Synth 8-3331] design dac_entity has unconnected port step1[31]
+WARNING: [Synth 8-3331] design dac_entity has unconnected port step2[31]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2354 ; free virtual = 7752
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2364 ; free virtual = 7917
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|step_scaler | p_0_out    | 4096x28       | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -184,13 +214,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2262 ; free virtual = 7664
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:01 ; elapsed = 00:01:09 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2242 ; free virtual = 7804
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2262 ; free virtual = 7663
+Finished Timing Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:10 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2240 ; free virtual = 7802
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -202,7 +232,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2260 ; free virtual = 7661
+Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:13 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2239 ; free virtual = 7799
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -226,13 +256,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2265 ; free virtual = 7666
+Finished IO Insertion : Time (s): cpu = 00:01:10 ; elapsed = 00:01:19 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2247 ; free virtual = 7804
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2265 ; free virtual = 7666
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:10 ; elapsed = 00:01:19 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2247 ; free virtual = 7805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -251,25 +281,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2265 ; free virtual = 7666
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:10 ; elapsed = 00:01:19 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2247 ; free virtual = 7804
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2265 ; free virtual = 7666
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:10 ; elapsed = 00:01:19 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2247 ; free virtual = 7804
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2265 ; free virtual = 7666
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:10 ; elapsed = 00:01:19 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2247 ; free virtual = 7804
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2265 ; free virtual = 7666
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:10 ; elapsed = 00:01:19 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2247 ; free virtual = 7804
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -281,62 +311,74 @@ Report BlackBoxes:
 +------+--------------+----------+
 |1     |clk_wiz_0     |         1|
 |2     |xadc_wiz      |         1|
-|3     |sin_12x16     |         1|
-|4     |square_12x16  |         1|
+|3     |adc_data_1    |         1|
+|4     |adc_data_2    |         1|
+|5     |btn_tim_1     |         2|
+|6     |sin_12x16     |         1|
+|7     |square_12x16  |         1|
 +------+--------------+----------+
 
 Report Cell Usage: 
 +------+--------------------+------+
 |      |Cell                |Count |
 +------+--------------------+------+
-|1     |clk_wiz_0_bbox_0    |     1|
-|2     |sin_12x16_bbox_2    |     1|
-|3     |square_12x16_bbox_3 |     1|
-|4     |xadc_wiz_bbox_1     |     1|
-|5     |BUFG                |     2|
-|6     |CARRY4              |     8|
-|7     |LUT1                |     3|
-|8     |LUT2                |    32|
-|9     |LUT3                |    24|
-|10    |FDRE                |    38|
-|11    |LD                  |    32|
-|12    |IBUF                |     8|
-|13    |OBUF                |    26|
+|1     |adc_data_1_bbox_5   |     1|
+|2     |adc_data_2_bbox_6   |     1|
+|3     |btn_tim_1_bbox_7    |     1|
+|4     |btn_tim_1_bbox_8    |     1|
+|5     |clk_wiz_0_bbox_1    |     1|
+|6     |sin_12x16_bbox_2    |     1|
+|7     |square_12x16_bbox_3 |     1|
+|8     |xadc_wiz_bbox_4     |     1|
+|9     |BUFG                |     2|
+|10    |CARRY4              |    16|
+|11    |LUT1                |     7|
+|12    |LUT2                |    19|
+|13    |LUT3                |    20|
+|14    |LUT4                |    64|
+|15    |LUT5                |    66|
+|16    |LUT6                |  2564|
+|17    |MUXF7               |  1112|
+|18    |MUXF8               |   504|
+|19    |FDRE                |    69|
+|20    |IBUF                |     8|
+|21    |OBUF                |    27|
 +------+--------------------+------+
 
 Report Instance Areas: 
-+------+---------------+-------------+------+
-|      |Instance       |Module       |Cells |
-+------+---------------+-------------+------+
-|1     |top            |             |   252|
-|2     |  adc_ch       |adc_channels |   103|
-|3     |  dac_channel1 |dac_entity   |   108|
-+------+---------------+-------------+------+
++------+-----------------+--------------+------+
+|      |Instance         |Module        |Cells |
++------+-----------------+--------------+------+
+|1     |top              |              |  4630|
+|2     |  adc            |adc_channels  |   126|
+|3     |  button_manager |buttons       |    54|
+|4     |  dac            |dac_entity    |   147|
+|5     |  step_scale1    |step_scaler   |  2132|
+|6     |  step_scale2    |step_scaler_0 |  2132|
++------+-----------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1970.895 ; gain = 380.203 ; free physical = 2265 ; free virtual = 7666
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:10 ; elapsed = 00:01:19 . Memory (MB): peak = 2123.180 ; gain = 529.172 ; free physical = 2247 ; free virtual = 7804
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 1970.895 ; gain = 269.406 ; free physical = 2320 ; free virtual = 7721
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1970.902 ; gain = 380.203 ; free physical = 2320 ; free virtual = 7721
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:08 ; elapsed = 00:01:16 . Memory (MB): peak = 2123.180 ; gain = 415.375 ; free physical = 2298 ; free virtual = 7855
+Synthesis Optimization Complete : Time (s): cpu = 00:01:10 ; elapsed = 00:01:19 . Memory (MB): peak = 2123.188 ; gain = 529.172 ; free physical = 2298 ; free virtual = 7855
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1970.902 ; gain = 0.000 ; free physical = 2397 ; free virtual = 7791
-INFO: [Netlist 29-17] Analyzing 40 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2123.188 ; gain = 0.000 ; free physical = 2368 ; free virtual = 7925
+INFO: [Netlist 29-17] Analyzing 1632 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 16 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1973.863 ; gain = 0.000 ; free physical = 2342 ; free virtual = 7736
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2123.188 ; gain = 0.000 ; free physical = 2319 ; free virtual = 7879
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 32 instances were transformed.
-  LD => LDCE: 16 instances
-  LD => LDCE (inverted pins: G): 16 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-32 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+42 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1973.863 ; gain = 539.453 ; free physical = 2478 ; free virtual = 7871
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1973.863 ; gain = 0.000 ; free physical = 2478 ; free virtual = 7871
+synth_design: Time (s): cpu = 00:01:21 ; elapsed = 00:01:36 . Memory (MB): peak = 2123.188 ; gain = 688.367 ; free physical = 2452 ; free virtual = 8010
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2123.188 ; gain = 0.000 ; free physical = 2452 ; free virtual = 8010
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.runs/synth_1/signal_generator.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file signal_generator_utilization_synth.rpt -pb signal_generator_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec  9 17:58:12 2020...
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 14 15:03:22 2020...

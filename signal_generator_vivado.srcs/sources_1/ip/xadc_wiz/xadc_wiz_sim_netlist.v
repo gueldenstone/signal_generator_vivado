@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-// Date        : Mon Nov 23 17:10:10 2020
+// Date        : Thu Dec 10 16:11:32 2020
 // Host        : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 // Command     : write_verilog -force -mode funcsim
 //               /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/xadc_wiz/xadc_wiz_sim_netlist.v
@@ -21,7 +21,6 @@ module xadc_wiz
     do_out,
     drdy_out,
     dclk_in,
-    reset_in,
     vauxp5,
     vauxn5,
     vauxp12,
@@ -40,7 +39,6 @@ module xadc_wiz
   output [15:0]do_out;
   output drdy_out;
   input dclk_in;
-  input reset_in;
   input vauxp5;
   input vauxn5;
   input vauxp12;
@@ -65,7 +63,6 @@ module xadc_wiz
   wire dwe_in;
   wire eoc_out;
   wire eos_out;
-  wire reset_in;
   wire vauxn12;
   wire vauxn5;
   wire vauxp12;
@@ -83,7 +80,7 @@ module xadc_wiz
   XADC #(
     .INIT_40(16'h2000),
     .INIT_41(16'h21AF),
-    .INIT_42(16'h0400),
+    .INIT_42(16'h0A00),
     .INIT_43(16'h0000),
     .INIT_44(16'h0000),
     .INIT_45(16'h0000),
@@ -96,7 +93,7 @@ module xadc_wiz
     .INIT_4C(16'h0000),
     .INIT_4D(16'h0000),
     .INIT_4E(16'h0000),
-    .INIT_4F(16'h1020),
+    .INIT_4F(16'h0000),
     .INIT_50(16'hB5ED),
     .INIT_51(16'h57E4),
     .INIT_52(16'hA147),
@@ -137,7 +134,7 @@ module xadc_wiz
         .JTAGMODIFIED(NLW_U0_JTAGMODIFIED_UNCONNECTED),
         .MUXADDR(NLW_U0_MUXADDR_UNCONNECTED[4:0]),
         .OT(NLW_U0_OT_UNCONNECTED),
-        .RESET(reset_in),
+        .RESET(1'b0),
         .VAUXN({1'b0,1'b0,1'b0,vauxn12,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,vauxn5,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .VAUXP({1'b0,1'b0,1'b0,vauxp12,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,vauxp5,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .VN(vn_in),

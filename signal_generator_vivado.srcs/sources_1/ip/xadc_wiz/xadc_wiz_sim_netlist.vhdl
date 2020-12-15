@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
--- Date        : Mon Nov 23 17:10:10 2020
+-- Date        : Thu Dec 10 16:11:32 2020
 -- Host        : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/xadc_wiz/xadc_wiz_sim_netlist.vhdl
@@ -23,7 +23,6 @@ entity xadc_wiz is
     do_out : out STD_LOGIC_VECTOR ( 15 downto 0 );
     drdy_out : out STD_LOGIC;
     dclk_in : in STD_LOGIC;
-    reset_in : in STD_LOGIC;
     vauxp5 : in STD_LOGIC;
     vauxn5 : in STD_LOGIC;
     vauxp12 : in STD_LOGIC;
@@ -54,7 +53,7 @@ U0: unisim.vcomponents.XADC
     generic map(
       INIT_40 => X"2000",
       INIT_41 => X"21AF",
-      INIT_42 => X"0400",
+      INIT_42 => X"0A00",
       INIT_43 => X"0000",
       INIT_44 => X"0000",
       INIT_45 => X"0000",
@@ -67,7 +66,7 @@ U0: unisim.vcomponents.XADC
       INIT_4C => X"0000",
       INIT_4D => X"0000",
       INIT_4E => X"0000",
-      INIT_4F => X"1020",
+      INIT_4F => X"0000",
       INIT_50 => X"B5ED",
       INIT_51 => X"57E4",
       INIT_52 => X"A147",
@@ -110,7 +109,7 @@ U0: unisim.vcomponents.XADC
       JTAGMODIFIED => NLW_U0_JTAGMODIFIED_UNCONNECTED,
       MUXADDR(4 downto 0) => NLW_U0_MUXADDR_UNCONNECTED(4 downto 0),
       OT => NLW_U0_OT_UNCONNECTED,
-      RESET => reset_in,
+      RESET => '0',
       VAUXN(15 downto 13) => B"000",
       VAUXN(12) => vauxn12,
       VAUXN(11 downto 6) => B"000000",

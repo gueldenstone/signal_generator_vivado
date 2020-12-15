@@ -55,10 +55,8 @@
 --  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 --   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 ------------------------------------------------------------------------------
--- clk_out1__124.80000______0.000______50.0______490.354____643.744
--- clk_out2__100.28571______0.000______50.0______503.549____643.744
--- clk_out3__50.14286______0.000______50.0______548.531____643.744
--- clk_out4__24.20690______0.000______50.0______647.799____643.744
+-- clk_24mhz__24.00000______0.000______50.0______675.356____635.708
+-- clk_6mhz5540___6.55340______0.000______50.0______839.399____635.708
 --
 ------------------------------------------------------------------------------
 -- Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -72,14 +70,9 @@ component clk_wiz_0
 port
  (-- Clock in ports
   -- Clock out ports
-  clk_out1          : out    std_logic;
-  clk_out2          : out    std_logic;
-  clk_out3          : out    std_logic;
-  clk_out4          : out    std_logic;
-  -- Status and control signals
-  reset             : in     std_logic;
-  locked            : out    std_logic;
-  clk_in1           : in     std_logic
+  clk_24mhz          : out    std_logic;
+  clk_6mhz5540          : out    std_logic;
+  clk_12mhz           : in     std_logic
  );
 end component;
 
@@ -90,14 +83,9 @@ end component;
 your_instance_name : clk_wiz_0
    port map ( 
   -- Clock out ports  
-   clk_out1 => clk_out1,
-   clk_out2 => clk_out2,
-   clk_out3 => clk_out3,
-   clk_out4 => clk_out4,
-  -- Status and control signals                
-   reset => reset,
-   locked => locked,
+   clk_24mhz => clk_24mhz,
+   clk_6mhz5540 => clk_6mhz5540,
    -- Clock in ports
-   clk_in1 => clk_in1
+   clk_12mhz => clk_12mhz
  );
 -- INST_TAG_END ------ End INSTANTIATION Template ------------
