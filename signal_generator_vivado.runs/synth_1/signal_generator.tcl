@@ -39,8 +39,12 @@ add_files /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/ressource/ramp_40
 add_files /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/ressource/sine_12x16.coe
 add_files /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/matlab/sin_12x16.coe
 add_files /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/matlab/square_12x16.coe
+add_files /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/matlab/sin_12x8.coe
+add_files /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/matlab/square_12x8.coe
+add_files /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/matlab/ramp_12x8.coe
 read_vhdl -library xil_defaultlib {
   /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/step_scaler.vhd
+  /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/clock_divider.vhd
   /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/signal_generator.vhd
   /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/adc.vhd
   /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/new/dac.vhd
@@ -58,17 +62,20 @@ read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_gener
 set_property used_in_implementation false [get_files -all /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/xadc_wiz/xadc_wiz_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/xadc_wiz/xadc_wiz.xdc]
 
-read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x16/sin_12x16.xci
-set_property used_in_implementation false [get_files -all /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x16/sin_12x16_ooc.xdc]
-
-read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x16/square_12x16.xci
-set_property used_in_implementation false [get_files -all /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x16/square_12x16_ooc.xdc]
-
 read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/adc_data_1/adc_data_1.xci
 set_property used_in_implementation false [get_files -all /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/adc_data_1/adc_data_1_ooc.xdc]
 
 read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/btn_tim_1/btn_tim_1.xci
 set_property used_in_implementation false [get_files -all /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/btn_tim_1/btn_tim_1_ooc.xdc]
+
+read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x8/sin_12x8.xci
+set_property used_in_implementation false [get_files -all /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x8/sin_12x8_ooc.xdc]
+
+read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x8/square_12x8.xci
+set_property used_in_implementation false [get_files -all /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x8/square_12x8_ooc.xdc]
+
+read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/ramp_12x8/ramp_12x8.xci
+set_property used_in_implementation false [get_files -all /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/ramp_12x8/ramp_12x8_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

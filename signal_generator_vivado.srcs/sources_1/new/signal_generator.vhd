@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 library work;
--- use work.clock_divider.all;
+use work.clock_divider.all;
 use work.dac.all;
 use work.adc.all;
 use work.log_scaler.all;
@@ -32,6 +32,7 @@ architecture behavioral of signal_generator is
   -- clock signals
   signal clk_24mhz : std_logic := '0';
   signal clk_6mhz5540 : std_logic := '0';
+  signal clk_2mhz : std_logic := '0';
 
   signal analog1_data : integer := 0;
   signal analog2_data : integer := 0;
@@ -64,11 +65,17 @@ begin
    clk_12mhz => i_clk_12mhz -- input
   );
 
+  clock_manager2 : clk_divider
+    port map (
+    clk_in => clk_24mhz,
+    clk_out => clk_2mhz
+    );
+
   -- dac
   dac : dac_entity
   port map
   (
-    clk => clk_6mhz5540,
+    clk => clk_2mhz,
     freq1 => freq1,
     freq2 => freq2,
     data_out1 => dac1_data,
@@ -84,8 +91,8 @@ begin
   o_dac2_data <= dac2_data;--std_logic_vector(to_unsigned(analog2_data,o_dac2_data'length));
 
   -- output clock for wrt and clk
-  o_clk_wrt1 <= clk_6mhz5540;
-  o_clk_wrt2 <= clk_6mhz5540;
+  o_clk_wrt1 <= clk_2mhz;
+  o_clk_wrt2 <= clk_2mhz;
 
   -- frequenz mit adc anpassen
 

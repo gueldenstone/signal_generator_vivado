@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Tue Dec 15 17:08:31 2020
+| Date         : Tue Dec 15 18:09:44 2020
 | Host         : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command      : report_control_sets -verbose -file signal_generator_control_sets_placed.rpt
 | Design       : signal_generator
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    10 |
-|    Minimum number of control sets                        |    10 |
+| Total control sets                                       |    11 |
+|    Minimum number of control sets                        |    11 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    53 |
+| Unused register locations in slices containing registers |    62 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    10 |
-| >= 0 to < 4        |     5 |
-| >= 4 to < 6        |     0 |
+| Total control sets |    11 |
+| >= 0 to < 4        |     7 |
+| >= 4 to < 6        |     1 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     5 |
+| >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,9 +58,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             127 |           54 |
-| No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |               0 |            0 |
+| No           | No                    | No                     |              70 |           21 |
+| No           | No                    | Yes                    |               4 |            3 |
+| No           | Yes                   | No                     |               4 |            1 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              52 |           16 |
@@ -70,19 +70,20 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------------------------------------------------+----------------+-----------------------+------------------+----------------+
-|                               Clock Signal                              |  Enable Signal |    Set/Reset Signal   | Slice Load Count | Bel Load Count |
-+-------------------------------------------------------------------------+----------------+-----------------------+------------------+----------------+
-|  btn0_IBUF_BUFG                                                         |                |                       |                1 |              1 |
-|  btn1_IBUF_BUFG                                                         |                |                       |                1 |              1 |
-|  button_manager/timer1/U0/i_synth/i_baseblox.i_baseblox_counter/THRESH0 |                |                       |                1 |              1 |
-|  adc/adc1/eoc_out                                                       |                |                       |                1 |              1 |
-|  button_manager/timer2/U0/i_synth/i_baseblox.i_baseblox_counter/THRESH0 |                |                       |                1 |              1 |
-|  i_clk_12mhz_IBUF_BUFG                                                  |                |                       |               18 |             26 |
-|  i_clk_12mhz_IBUF_BUFG                                                  | btn0_IBUF_BUFG | button_manager/reset1 |                8 |             26 |
-|  i_clk_12mhz_IBUF_BUFG                                                  | btn1_IBUF_BUFG | button_manager/reset2 |                8 |             26 |
-|  clock_manager/inst/clk_6mhz5540                                        |                |                       |               15 |             32 |
-| ~clock_manager/inst/clk_6mhz5540                                        |                |                       |               16 |             64 |
-+-------------------------------------------------------------------------+----------------+-----------------------+------------------+----------------+
++-------------------------------------------------------------------------+----------------+-----------------------------------+------------------+----------------+
+|                               Clock Signal                              |  Enable Signal |          Set/Reset Signal         | Slice Load Count | Bel Load Count |
++-------------------------------------------------------------------------+----------------+-----------------------------------+------------------+----------------+
+|  adc/adc1/eoc_out                                                       |                |                                   |                1 |              1 |
+|  clock_manager/inst/clk_24mhz                                           |                |                                   |                1 |              1 |
+|  button_manager/timer2/U0/i_synth/i_baseblox.i_baseblox_counter/THRESH0 |                |                                   |                1 |              1 |
+|  button_manager/timer1/U0/i_synth/i_baseblox.i_baseblox_counter/THRESH0 |                |                                   |                1 |              1 |
+|  i_clk_12mhz_IBUF_BUFG                                                  |                |                                   |                1 |              2 |
+|  btn1_IBUF_BUFG                                                         |                | dac/state2[1]_i_2_n_0             |                1 |              2 |
+|  btn0_IBUF_BUFG                                                         |                | dac/state1[1]_i_2_n_0             |                2 |              2 |
+|  clock_manager/inst/clk_24mhz                                           |                | clock_manager2/counter[3]_i_1_n_0 |                1 |              4 |
+|  i_clk_12mhz_IBUF_BUFG                                                  | btn1_IBUF_BUFG | button_manager/reset2             |                8 |             26 |
+|  i_clk_12mhz_IBUF_BUFG                                                  | btn0_IBUF_BUFG | button_manager/reset1             |                8 |             26 |
+| ~o_clk_wrt2_OBUF_BUFG                                                   |                |                                   |               16 |             64 |
++-------------------------------------------------------------------------+----------------+-----------------------------------+------------------+----------------+
 
 

@@ -26,7 +26,7 @@ end clk_divider;
 
 architecture behavioral of clk_divider is
     signal temp: std_logic := '0';
-    signal counter : integer range 0 to 124999 := 0;
+    signal counter : integer range 0 to 10 := 0;
 begin
     process (clk_in) begin
         if rising_edge(clk_in) then

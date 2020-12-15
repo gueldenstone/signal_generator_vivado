@@ -81,10 +81,11 @@ set rc [catch {
   read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/adc_data_2/adc_data_2.xci
   read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/xadc_wiz/xadc_wiz.xci
-  read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x16/sin_12x16.xci
-  read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x16/square_12x16.xci
   read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/adc_data_1/adc_data_1.xci
   read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/btn_tim_1/btn_tim_1.xci
+  read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/sin_12x8/sin_12x8.xci
+  read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/square_12x8/square_12x8.xci
+  read_ip -quiet /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/sources_1/ip/ramp_12x8/ramp_12x8.xci
   read_xdc /home/lukas/01_Studium/02_DigiSys_CAE/Projektaufgabe/signal_generator_vivado/signal_generator_vivado.srcs/constrs_1/imports/new/signal_generator.xdc
   link_design -top signal_generator -part xc7s25csga225-1
   close_msg_db -file init_design.pb

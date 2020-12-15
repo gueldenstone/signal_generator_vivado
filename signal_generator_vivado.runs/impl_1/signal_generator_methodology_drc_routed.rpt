@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Tue Dec 15 17:10:19 2020
+| Date         : Tue Dec 15 18:10:08 2020
 | Host         : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command      : report_methodology -file signal_generator_methodology_drc_routed.rpt -pb signal_generator_methodology_drc_routed.pb -rpx signal_generator_methodology_drc_routed.rpx
 | Design       : signal_generator
@@ -23,17 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 76
+             Violations found: 83
 +-----------+------------------+----------------------------------------------------+------------+
 | Rule      | Severity         | Description                                        | Violations |
 +-----------+------------------+----------------------------------------------------+------------+
 | TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 1          |
-| TIMING-6  | Critical Warning | No common primary clock between related clocks     | 1          |
-| TIMING-7  | Critical Warning | No common node between related clocks              | 1          |
-| TIMING-8  | Critical Warning | No common period between related clocks            | 1          |
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 5          |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 77         |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1          |
-| TIMING-16 | Warning          | Large setup violation                              | 64         |
+| LUTAR-1   | Warning          | LUT drives async reset alert                       | 2          |
 | TIMING-18 | Warning          | Missing input or output delay                      | 2          |
 +-----------+------------------+----------------------------------------------------+------------+
 
@@ -42,21 +39,6 @@ Table of Contents
 TIMING-4#1 Critical Warning
 Invalid primary clock redefinition on a clock tree  
 Invalid clock redefinition on a clock tree. The primary clock clock_manager/inst/clk_12mhz is defined downstream of clock sys_clk_pin and overrides its insertion delay and/or waveform definition
-Related violations: <none>
-
-TIMING-6#1 Critical Warning
-No common primary clock between related clocks  
-The clocks sys_clk_pin and clk_6mhz5540_clk_wiz_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks sys_clk_pin] -to [get_clocks clk_6mhz5540_clk_wiz_0]
-Related violations: <none>
-
-TIMING-7#1 Critical Warning
-No common node between related clocks  
-The clocks sys_clk_pin and clk_6mhz5540_clk_wiz_0 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks sys_clk_pin] -to [get_clocks clk_6mhz5540_clk_wiz_0]
-Related violations: <none>
-
-TIMING-8#1 Critical Warning
-No common period between related clocks  
-The clocks sys_clk_pin and clk_6mhz5540_clk_wiz_0 are found related (timed together) but have no common (expandable) period
 Related violations: <none>
 
 TIMING-17#1 Critical Warning
@@ -76,12 +58,372 @@ Related violations: <none>
 
 TIMING-17#4 Critical Warning
 Non-clocked sequential cell  
-The clock pin dac/state1_reg/C is not reached by a timing clock
+The clock pin dac/phase1_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#5 Critical Warning
 Non-clocked sequential cell  
-The clock pin dac/state2_reg/C is not reached by a timing clock
+The clock pin dac/phase1_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[14]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[15]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[16]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[17]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[18]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[19]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[20]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[21]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[22]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[23]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[24]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#21 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[25]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#22 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[26]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#23 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[27]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#24 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[28]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#25 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[29]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#26 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#27 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[30]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#28 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[31]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#29 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#30 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#31 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#32 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#33 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#34 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#35 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase1_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#36 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#37 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#38 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#39 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#40 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#41 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[14]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#42 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[15]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#43 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[16]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#44 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[17]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#45 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[18]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#46 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[19]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#47 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#48 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[20]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#49 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[21]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#50 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[22]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#51 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[23]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#52 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[24]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#53 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[25]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#54 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[26]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#55 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[27]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#56 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[28]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#57 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[29]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#58 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#59 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[30]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#60 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[31]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#61 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#62 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#63 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#64 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#65 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#66 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#67 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/phase2_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#68 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/ramp/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKARDCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#69 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/ramp/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#70 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKARDCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#71 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/sinus/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#72 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKARDCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#73 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/square/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#74 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/state1_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#75 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/state1_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#76 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/state2_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#77 Critical Warning
+Non-clocked sequential cell  
+The clock pin dac/state2_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-27#1 Critical Warning
@@ -89,324 +431,14 @@ Invalid primary clock on hierarchical pin
 A primary clock clock_manager/inst/clk_12mhz is created on an inappropriate internal pin clock_manager/inst/clk_12mhz. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
 Related violations: <none>
 
-TIMING-16#1 Warning
-Large setup violation  
-There is a large setup violation of -10.209 ns between step_scale1/phase1[0]_i_106_psbram_5_replica_15/C (clocked by sys_clk_pin) and dac/phase1_reg[0]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell dac/state1[1]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) dac/state1_reg[0]/CLR, dac/state1_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-TIMING-16#2 Warning
-Large setup violation  
-There is a large setup violation of -10.256 ns between step_scale2/phase2[0]_i_106_psbram_5_replica_2/C (clocked by sys_clk_pin) and dac/phase2_reg[1]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -10.386 ns between step_scale1/phase1[0]_i_106_psbram_5_replica_15/C (clocked by sys_clk_pin) and dac/phase1_reg[1]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#4 Warning
-Large setup violation  
-There is a large setup violation of -10.980 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[2]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#5 Warning
-Large setup violation  
-There is a large setup violation of -11.084 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[3]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#6 Warning
-Large setup violation  
-There is a large setup violation of -11.093 ns between step_scale1/phase1[0]_i_106_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase1_reg[2]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#7 Warning
-Large setup violation  
-There is a large setup violation of -11.197 ns between step_scale1/phase1[0]_i_106_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase1_reg[3]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#8 Warning
-Large setup violation  
-There is a large setup violation of -11.353 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[4]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#9 Warning
-Large setup violation  
-There is a large setup violation of -11.467 ns between step_scale1/phase1[0]_i_106_psbram_1_replica_11/C (clocked by sys_clk_pin) and dac/phase1_reg[4]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#10 Warning
-Large setup violation  
-There is a large setup violation of -12.103 ns between step_scale1/phase1[0]_i_106_psbram_5_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[5]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#11 Warning
-Large setup violation  
-There is a large setup violation of -12.256 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[5]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#12 Warning
-Large setup violation  
-There is a large setup violation of -12.650 ns between step_scale1/phase1[0]_i_106_psbram_5_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[6]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#13 Warning
-Large setup violation  
-There is a large setup violation of -12.887 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[6]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#14 Warning
-Large setup violation  
-There is a large setup violation of -13.121 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[7]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#15 Warning
-Large setup violation  
-There is a large setup violation of -13.154 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[7]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#16 Warning
-Large setup violation  
-There is a large setup violation of -13.685 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[8]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#17 Warning
-Large setup violation  
-There is a large setup violation of -13.781 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[8]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#18 Warning
-Large setup violation  
-There is a large setup violation of -13.862 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[9]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#19 Warning
-Large setup violation  
-There is a large setup violation of -13.958 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[9]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#20 Warning
-Large setup violation  
-There is a large setup violation of -13.985 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[10]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#21 Warning
-Large setup violation  
-There is a large setup violation of -14.044 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[11]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#22 Warning
-Large setup violation  
-There is a large setup violation of -14.116 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[10]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#23 Warning
-Large setup violation  
-There is a large setup violation of -14.175 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[11]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#24 Warning
-Large setup violation  
-There is a large setup violation of -14.193 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[12]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#25 Warning
-Large setup violation  
-There is a large setup violation of -14.209 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[14]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#26 Warning
-Large setup violation  
-There is a large setup violation of -14.283 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[15]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#27 Warning
-Large setup violation  
-There is a large setup violation of -14.304 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[13]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#28 Warning
-Large setup violation  
-There is a large setup violation of -14.306 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[16]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#29 Warning
-Large setup violation  
-There is a large setup violation of -14.310 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[12]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#30 Warning
-Large setup violation  
-There is a large setup violation of -14.322 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[18]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#31 Warning
-Large setup violation  
-There is a large setup violation of -14.326 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[14]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#32 Warning
-Large setup violation  
-There is a large setup violation of -14.396 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[19]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#33 Warning
-Large setup violation  
-There is a large setup violation of -14.400 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[15]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#34 Warning
-Large setup violation  
-There is a large setup violation of -14.417 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[17]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#35 Warning
-Large setup violation  
-There is a large setup violation of -14.420 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[20]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#36 Warning
-Large setup violation  
-There is a large setup violation of -14.421 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[13]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#37 Warning
-Large setup violation  
-There is a large setup violation of -14.426 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[16]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#38 Warning
-Large setup violation  
-There is a large setup violation of -14.436 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[22]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#39 Warning
-Large setup violation  
-There is a large setup violation of -14.442 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[18]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#40 Warning
-Large setup violation  
-There is a large setup violation of -14.510 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[23]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#41 Warning
-Large setup violation  
-There is a large setup violation of -14.516 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[19]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#42 Warning
-Large setup violation  
-There is a large setup violation of -14.531 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[21]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#43 Warning
-Large setup violation  
-There is a large setup violation of -14.534 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[24]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#44 Warning
-Large setup violation  
-There is a large setup violation of -14.537 ns between step_scale1/phase1[0]_i_106_psbram_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[17]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#45 Warning
-Large setup violation  
-There is a large setup violation of -14.550 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[26]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#46 Warning
-Large setup violation  
-There is a large setup violation of -14.594 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[20]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#47 Warning
-Large setup violation  
-There is a large setup violation of -14.610 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[22]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#48 Warning
-Large setup violation  
-There is a large setup violation of -14.624 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[27]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#49 Warning
-Large setup violation  
-There is a large setup violation of -14.645 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[25]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#50 Warning
-Large setup violation  
-There is a large setup violation of -14.648 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[28]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#51 Warning
-Large setup violation  
-There is a large setup violation of -14.664 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[30]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#52 Warning
-Large setup violation  
-There is a large setup violation of -14.684 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[23]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#53 Warning
-Large setup violation  
-There is a large setup violation of -14.705 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[21]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#54 Warning
-Large setup violation  
-There is a large setup violation of -14.725 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[24]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#55 Warning
-Large setup violation  
-There is a large setup violation of -14.738 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[31]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#56 Warning
-Large setup violation  
-There is a large setup violation of -14.741 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[26]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#57 Warning
-Large setup violation  
-There is a large setup violation of -14.759 ns between step_scale2/phase2[0]_i_106_psbram_1_replica_1/C (clocked by sys_clk_pin) and dac/phase2_reg[29]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#58 Warning
-Large setup violation  
-There is a large setup violation of -14.815 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[27]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#59 Warning
-Large setup violation  
-There is a large setup violation of -14.836 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[25]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#60 Warning
-Large setup violation  
-There is a large setup violation of -14.838 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[28]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#61 Warning
-Large setup violation  
-There is a large setup violation of -14.854 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[30]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#62 Warning
-Large setup violation  
-There is a large setup violation of -14.928 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[31]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#63 Warning
-Large setup violation  
-There is a large setup violation of -14.949 ns between step_scale1/phase1[0]_i_106_psbram_3_replica_3/C (clocked by sys_clk_pin) and dac/phase1_reg[29]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#64 Warning
-Large setup violation  
-There is a large setup violation of -9.992 ns between step_scale2/phase2[0]_i_106_psbram_5_replica_2/C (clocked by sys_clk_pin) and dac/phase2_reg[0]/D (clocked by clk_6mhz5540_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell dac/state2[1]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) dac/state2_reg[0]/CLR, dac/state2_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning
