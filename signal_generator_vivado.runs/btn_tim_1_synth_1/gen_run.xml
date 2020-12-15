@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="btn_tim_1_synth_1" LaunchPart="xc7s25csga225-1" LaunchTime="1607871925">
-  <File Type="RDS-UTIL-PB" Name="btn_tim_1_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="btn_tim_1_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="btn_tim_1_utilization_synth.pb"/>
   <File Type="RDS-RDS" Name="btn_tim_1.vds"/>
   <File Type="RDS-DCP" Name="btn_tim_1.dcp"/>
   <File Type="PA-TCL" Name="btn_tim_1.tcl"/>

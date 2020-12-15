@@ -37,10 +37,10 @@ architecture behavioral of signal_generator is
   signal analog2_data : integer := 0;
 
   signal dac1_data: std_logic_vector(11 downto 0) := (others => '0');
-  signal phase1 : integer := 1;
+  signal freq1 : integer := 1;
 
   signal dac2_data: std_logic_vector(11 downto 0) := (others => '0');
-  signal phase2 : integer := 1;
+  signal freq2 : integer := 1;
 
   signal btn0_short : std_logic := '0';
   signal btn1_short : std_logic := '0';
@@ -69,8 +69,8 @@ begin
   port map
   (
     clk => clk_6mhz5540,
-    step1 => phase1,
-    step2 => phase2,
+    freq1 => freq1,
+    freq2 => freq2,
     data_out1 => dac1_data,
     data_out2 => dac2_data,
     sig_chg1 => btn0_short,
@@ -106,13 +106,13 @@ begin
   step_scale1 : step_scaler
   port map (
     in_value => analog1_data,
-    scaled_value => phase1
+    scaled_value => freq1
   );
 
   step_scale2 : step_scaler
   port map (
     in_value => analog2_data,
-    scaled_value => phase2
+    scaled_value => freq2
   );
 
   button_manager : buttons

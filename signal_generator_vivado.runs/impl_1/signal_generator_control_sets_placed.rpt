@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Mon Dec 14 15:05:43 2020
+| Date         : Tue Dec 15 17:08:31 2020
 | Host         : elitebook-manjaro-lgu running 64-bit Manjaro Linux
 | Command      : report_control_sets -verbose -file signal_generator_control_sets_placed.rpt
 | Design       : signal_generator
@@ -58,7 +58,7 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             127 |           57 |
+| No           | No                    | No                     |             127 |           54 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
@@ -75,13 +75,13 @@ Table of Contents
 +-------------------------------------------------------------------------+----------------+-----------------------+------------------+----------------+
 |  btn0_IBUF_BUFG                                                         |                |                       |                1 |              1 |
 |  btn1_IBUF_BUFG                                                         |                |                       |                1 |              1 |
-|  button_manager/timer2/U0/i_synth/i_baseblox.i_baseblox_counter/THRESH0 |                |                       |                1 |              1 |
 |  button_manager/timer1/U0/i_synth/i_baseblox.i_baseblox_counter/THRESH0 |                |                       |                1 |              1 |
 |  adc/adc1/eoc_out                                                       |                |                       |                1 |              1 |
-|  i_clk_12mhz_IBUF_BUFG                                                  |                |                       |               23 |             26 |
+|  button_manager/timer2/U0/i_synth/i_baseblox.i_baseblox_counter/THRESH0 |                |                       |                1 |              1 |
+|  i_clk_12mhz_IBUF_BUFG                                                  |                |                       |               18 |             26 |
 |  i_clk_12mhz_IBUF_BUFG                                                  | btn0_IBUF_BUFG | button_manager/reset1 |                8 |             26 |
 |  i_clk_12mhz_IBUF_BUFG                                                  | btn1_IBUF_BUFG | button_manager/reset2 |                8 |             26 |
-|  clock_manager/inst/clk_6mhz5540                                        |                |                       |               13 |             32 |
+|  clock_manager/inst/clk_6mhz5540                                        |                |                       |               15 |             32 |
 | ~clock_manager/inst/clk_6mhz5540                                        |                |                       |               16 |             64 |
 +-------------------------------------------------------------------------+----------------+-----------------------+------------------+----------------+
 

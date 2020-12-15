@@ -6,8 +6,8 @@ package dac is
     component dac_entity is
         port ( 
             clk : in  std_logic := '0';
-            step1 : in integer := 1;
-            step2 : in integer := 1;
+            freq1 : in integer := 1;
+            freq2 : in integer := 1;
             data_out1 : out std_logic_vector(11 downto 0) := (others => '0');
             data_out2 : out std_logic_vector(11 downto 0) := (others => '0');
             sig_chg1 : in std_logic := '0';
@@ -26,8 +26,8 @@ use ieee.numeric_std.all;
 entity dac_entity is
  port ( 
      clk : in  std_logic := '0';
-     step1 : in integer := 1;
-     step2 : in integer := 1;
+     freq1 : in integer := 20;
+     freq2 : in integer := 20;
      data_out1 : out std_logic_vector(11 downto 0) := (others => '0');
      data_out2 : out std_logic_vector(11 downto 0) := (others => '0');
      sig_chg1 : in std_logic := '0';
@@ -39,14 +39,25 @@ entity dac_entity is
 end dac_entity;
 
 architecture impl of dac_entity is
+    constant f_s : integer := 6554000;
+    constant N_phase : integer := 32;
+
+    signal factor : integer := 0;
+
     signal phase1 : unsigned(31 downto 0) := (others => '0');
     signal phase2 : unsigned(31 downto 0) := (others => '0');
+
+    signal step1 : integer := 20;
+    signal step2 : integer := 20;
+
     signal address1 : std_logic_vector(15 downto 0) := (others => '0');
     signal address2 : std_logic_vector(15 downto 0) := (others => '0');
+
     signal square_data1 : std_logic_vector(11 downto 0) := (others => '0');
     signal sin_data1 : std_logic_vector(11 downto 0) := (others => '0');
     signal square_data2 : std_logic_vector(11 downto 0) := (others => '0');
     signal sin_data2 : std_logic_vector(11 downto 0) := (others => '0');
+
     signal state1 : std_logic := '0';
     signal state2 : std_logic := '0';
 
@@ -115,6 +126,10 @@ begin
 
     address1 <= std_logic_vector(phase1(31 downto 16));
     address2 <= std_logic_vector(phase2(31 downto 16));
+
+    factor <= 655;
+    step1 <= factor*freq1;
+    step2 <= factor*freq2;
 
     -- ram
     sinus : sin_12x16
