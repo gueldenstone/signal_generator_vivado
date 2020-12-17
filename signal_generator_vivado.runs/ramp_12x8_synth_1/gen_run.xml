@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="ramp_12x8_synth_1" LaunchPart="xc7s25csga225-1" LaunchTime="1608049516">
-  <File Type="VDS-TIMING-PB" Name="ramp_12x8_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="ramp_12x8_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="ramp_12x8.dcp"/>
-  <File Type="REPORTS-TCL" Name="ramp_12x8_reports.tcl"/>
-  <File Type="PA-TCL" Name="ramp_12x8.tcl"/>
-  <File Type="RDS-RDS" Name="ramp_12x8.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="ramp_12x8_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="ramp_12x8_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="ramp_12x8_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="ramp_12x8_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="ramp_12x8.vds"/>
+  <File Type="RDS-DCP" Name="ramp_12x8.dcp"/>
+  <File Type="PA-TCL" Name="ramp_12x8.tcl"/>
+  <File Type="REPORTS-TCL" Name="ramp_12x8_reports.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ramp_12x8">
     <File Path="$PSRCDIR/sources_1/ip/ramp_12x8/ramp_12x8.xci">
       <FileInfo>
@@ -42,9 +39,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

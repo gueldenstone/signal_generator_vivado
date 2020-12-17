@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="sin_12x16_synth_1" LaunchPart="xc7s25csga225-1" LaunchTime="1607544143">
-  <File Type="RDS-DCP" Name="sin_12x16.dcp"/>
   <File Type="PA-TCL" Name="sin_12x16.tcl"/>
+  <File Type="RDS-DCP" Name="sin_12x16.dcp"/>
   <File Type="REPORTS-TCL" Name="sin_12x16_reports.tcl"/>
   <File Type="RDS-RDS" Name="sin_12x16.vds"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/sin_12x16">

@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 1
-set_param xicom.use_bs_reader 1
 set_msg_config  -id {Labtoolstcl 44-513}  -string {{ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210376AC741CA}}  -suppress 
 create_project -in_memory -part xc7s25csga225-1
 
